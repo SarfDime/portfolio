@@ -1,0 +1,81 @@
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1.6rem 2rem;
+
+    gap: 1rem;
+
+    flex-wrap: wrap;
+
+    background-color: var(--tpPri);
+    border-bottom-left-radius: 3rem;
+    border-bottom-right-radius: 3rem;
+
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+
+    @keyframes rotateAnimation {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        50% {
+            transform: rotate(190deg);
+        }
+
+        100% {
+            transform: rotate(120deg);
+        }
+    }
+
+    @keyframes returnAnimation {
+        0% {
+            transform: rotate(420deg);
+        }
+
+        60% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(50deg);
+        }
+    }
+
+    @keyframes rotateAnimation2 {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        50% {
+            transform: rotate(380deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes returnAnimation2 {
+        0% {
+            transform: rotate(420deg);
+        }
+
+        60% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(0deg);
+        }
+    }
+
+    #headerLogo {
+        width: 2rem;
+        height: 2rem;
+        color: var(--secAccent);
+    }
+}

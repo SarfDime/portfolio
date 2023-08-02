@@ -1,0 +1,22 @@
+:root {
+    --priColor: rgb(243, 243, 243);
+    --tpPri: rgba(255, 255, 255, .65);
+    --tpSec: rgba(0, 0, 0, 0.650);
+    --secColor: rgba(0, 0, 0, 0.822);
+    --secAccent: rgb(237, 22, 165);
+    --accent: rgb(20, 221, 171);
+    --tertAccent: rgb(235, 152, 36);
+
+    --paleAccent: rgba(26, 216, 169, 0.489);
+}
+
+.dark-mode {
+    --priColor: rgb(0, 0, 0);
+    --tpPri: rgba(0, 0, 0, 0.475);
+    --tpSec: rgba(255, 255, 255, 0.2);
+    --secColor: rgb(255, 255, 255);
+    --secAccent: rgb(165, 22, 237);
+    --accent: rgb(171, 221, 20);
+    --tertAccent: rgb(36, 152, 235);
+    background: radial-gradient(circle at center, #1b2735 0%, #090a0f 100%);
+}

@@ -1,0 +1,144 @@
+header {
+    nav {
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        button {
+            position: relative;
+            padding: .8rem 1.3rem;
+            border-radius: 1.5rem;
+            transition: 300ms ease;
+
+            overflow: hidden;
+
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+
+            font-size: large;
+
+            --origin: center;
+            --scale: 0;
+
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                border-radius: 100%;
+
+                transform: scale(var(--scale));
+                transition: transform 0.7s cubic-bezier(0, 0.5, 0.5, 1);
+                transform-origin: var(--origin);
+
+                z-index: -2;
+            }
+
+            &::before {
+                inset: -3rem;
+                background-color: var(--secAccent);
+                transition-delay: transform 0.35s;
+                opacity: 0.6;
+            }
+
+            &::after {
+                inset: -1rem;
+                background-color: var(--accent);
+                transition-delay: transform 1.2s;
+                transition-delay: scale 1.2s;
+                opacity: 1;
+            }
+
+            &:first-child {
+                border-top-left-radius: 1.5rem;
+                border-bottom-left-radius: 2rem;
+            }
+
+            &:nth-child(2) {
+                border-radius: 1rem;
+            }
+
+            &:last-child {
+                border-top-right-radius: 1.5rem;
+                border-bottom-right-radius: 2rem;
+                gap: .2rem;
+            }
+
+            svg {
+                path {
+                    &:last-child {
+                        stroke-dasharray: 100;
+                        stroke-dashoffset: 0;
+                        transition: stroke-dashoffset 1s linear;
+                    }
+                }
+            }
+
+            &:hover {
+                svg {
+                    path {
+                        &:last-child {
+                            stroke-dashoffset: 100;
+                        }
+                    }
+
+                    animation: rotateAnimation2 .8s linear forwards;
+                }
+            }
+
+            &:focus-visible {
+
+                &::before,
+                &::after {
+                    transition: all 0.7s cubic-bezier(0, 0.5, 0.5, 1);
+                    transform: scale(1);
+                    transform-origin: center;
+                }
+            }
+
+            &:active {
+                color: var(--secColor);
+
+                &::before,
+                &::after {
+                    background-color: var(--tertAccent);
+                    transition: background-color 0.2s cubic-bezier(0, 0.5, 0.5, 1);
+                }
+            }
+
+            &.active {
+                font-size: larger;
+                padding: 1rem 1.5rem;
+                color: var(--accent);
+                box-shadow: var(--paleAccent) 0px 0px 0px 1px;
+
+                &::before,
+                &::after {
+                    background-color: var(--tertAccent);
+                }
+
+                &:hover {
+                    svg {
+                        animation: none;
+
+                        path {
+                            stroke-dashoffset: 0;
+                        }
+                    }
+                }
+
+                &:focus-visible {
+
+                    &::before,
+                    &::after {
+                        background-color: none;
+                        transform: scale(0);
+                    }
+                }
+            }
+        }
+    }
+}
