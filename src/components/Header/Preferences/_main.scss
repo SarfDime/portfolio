@@ -7,8 +7,9 @@ header {
         justify-content: center;
 
         #settingsButton {
-            width: 2rem;
-            height: 2rem;
+            width: 2.3rem;
+            height: 2.3rem;
+
             color: var(--tertAccent);
 
             svg {
@@ -42,21 +43,18 @@ header {
 
         .settingsContainer {
             position: absolute;
-            background-color: red;
             display: grid;
             grid-template-rows: 0fr;
 
             gap: 1rem;
-
-            background-color: var(--tpPri);
+            background: var(--tpPri);
             border-bottom-left-radius: 1.5rem;
             border-bottom-right-radius: 1.5rem;
 
-            box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+            box-shadow: var(--paleAccent) 0 var(--shadowValue) 0, var(--shadowColorThree) 0 0 .65rem;
 
             width: 20rem;
 
-            overflow: hidden;
             top: -2rem;
             left: 5.5rem;
 
@@ -66,6 +64,7 @@ header {
             padding-block: 0.5rem 1.5rem;
             padding-inline: 1.5rem;
             transform: translateY(-30rem);
+
             .themeContainer {
                 display: flex;
                 flex-direction: column;
@@ -81,7 +80,7 @@ header {
                     &::after {
                         content: '';
                         display: block;
-                        background: linear-gradient(45deg, var(--accent) 0%, var(--paleAccent) 50%, var(--accent) 100%);
+                        background: linear-gradient(45deg, var(--paleAccent) 0%, var(--accent) 50%, var(--paleAccent) 100%);
                         margin-block: .5rem;
                         height: .2rem;
                         width: 100%;
@@ -94,12 +93,17 @@ header {
                     align-items: center;
                     width: 100%;
                     margin-block: .5rem;
-                    border: .1rem solid transparent;
+                    border: .15rem solid transparent;
                     transition: all .3s ease-in-out;
 
-                    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+                    color: var(--secColor);
+                    box-shadow: var(--shadowColor) 0 .05rem .1rem 0;
+
                     padding: .5rem;
-                    border-radius: .5rem;
+                    border-radius: 1rem;
+
+                    border-top-left-radius: 1rem;
+                    border-bottom-left-radius: .7rem;
 
                     svg {
                         width: 1.5rem;
@@ -110,12 +114,34 @@ header {
                     }
 
                     &.currentTheme {
+                        pointer-events: none;
                         color: var(--accent);
+                        background: var(--tpPri);
                         border-color: var(--paleAccent);
                         box-shadow: none;
+
+                        &:focus-visible {
+                            background: var(--tpPri);
+                        }
                     }
 
-                    
+                    &:hover {
+                        background: var(--paleAccent);
+
+                        svg {
+                            path {
+                                &:first-child {
+                                    stroke-dashoffset: 100;
+                                }
+                            }
+
+                            animation: rotateAnimation2 .8s linear forwards;
+                        }
+                    }
+
+                    &:focus-visible {
+                        background: var(--paleAccent);
+                    }
                 }
             }
         }
@@ -125,8 +151,7 @@ header {
             transform: translateY(-30rem);
         }
 
-        .settingsContainer-enter-done,
-        .settingsContainer-exited {
+        .settingsContainer-enter-done {
             transform: translateY(0);
         }
     }

@@ -1,14 +1,5 @@
 import { configureStore, createSlice } from '@reduxjs/toolkit'
-
-const themeSlice = createSlice({
-    name: 'theme',
-    initialState: 'system',
-    reducers: {
-        setTheme: (state, action) => {
-            return action.payload
-        },
-    },
-})
+import themeReducer from './themeSlice.js'
 
 const settingsVisibilitySlice = createSlice({
     name: 'settingsVisibility',
@@ -22,12 +13,11 @@ const settingsVisibilitySlice = createSlice({
 
 const store = configureStore({
     reducer: {
-        theme: themeSlice.reducer,
+        theme: themeReducer,
         settingsVisibility: settingsVisibilitySlice.reducer,
     },
 })
 
-export const { setTheme } = themeSlice.actions;
 export const { toggleSettings } = settingsVisibilitySlice.actions
 
 export default store

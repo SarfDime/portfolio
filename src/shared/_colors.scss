@@ -6,17 +6,33 @@
     --secAccent: rgb(237, 22, 165);
     --accent: rgb(20, 221, 171);
     --tertAccent: rgb(235, 152, 36);
-
+    
+    --shadowColor: rgba(0, 0, 0, 0.05);
+    --shadowValue: 0.1rem;
+    --shadowColorThree: rgba(17, 17, 26, 0.05);
     --paleAccent: rgba(26, 216, 169, 0.489);
 }
 
 .dark-mode {
     --priColor: rgb(0, 0, 0);
-    --tpPri: rgba(0, 0, 0, 0.475);
+    --tpPri: rgba(25, 25, 25, 0.475);
     --tpSec: rgba(255, 255, 255, 0.2);
     --secColor: rgb(255, 255, 255);
-    --secAccent: rgb(165, 22, 237);
-    --accent: rgb(171, 221, 20);
-    --tertAccent: rgb(36, 152, 235);
+
+    // --secAccent: rgb(50, 205, 232);
+    // --accent: rgb(232, 180, 47);
+    // --tertAccent: rgb(109, 220, 39);
+
+    --accent: rgb(255, 102, 229);
+    --secAccent: rgb(78, 199, 255);
+    --tertAccent: rgb(255, 183, 82);
+
+    --shadowColor: rgba(255, 255, 255, 0.247);
+    --shadowValue: 0.05rem;
+    --shadowColorThree: rgba(177, 177, 177, 0.11);
+
+    --paleAccent: rgba(255, 84, 232, 0.489);
+    // --paleAccent: rgba(232, 180, 47, 0.489);
+    
     background: radial-gradient(circle at center, #1b2735 0%, #090a0f 100%);
 }

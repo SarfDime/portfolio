@@ -13,7 +13,8 @@ header {
 
             overflow: hidden;
 
-            box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+            box-shadow: var(--shadowColor) 0 var(--shadowValue) .1rem 0;
+            color: var(--secColor);
 
             display: flex;
             align-items: center;
@@ -114,29 +115,11 @@ header {
                 padding: 1rem 1.5rem;
                 color: var(--accent);
                 box-shadow: var(--paleAccent) 0px 0px 0px 1px;
+                pointer-events: none;
 
                 &::before,
                 &::after {
                     background-color: var(--tertAccent);
-                }
-
-                &:hover {
-                    svg {
-                        animation: none;
-
-                        path {
-                            stroke-dashoffset: 0;
-                        }
-                    }
-                }
-
-                &:focus-visible {
-
-                    &::before,
-                    &::after {
-                        background-color: none;
-                        transform: scale(0);
-                    }
                 }
             }
         }
