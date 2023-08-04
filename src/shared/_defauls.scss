@@ -11,13 +11,34 @@
 }
 
 body {
-    // position: relative;
     font-family: 'Segoe UI', Calibri, Verdana, sans-serif;
-    // overflow: hidden;
-    // overflow-y: auto;
+    overflow: hidden;
     color: var(--secColor);
     display: flex;
     justify-content: center;
+
+    &.dark-mode {
+        #root {
+            header {
+                backdrop-filter: blur(.5rem);
+
+                nav {
+                    button {
+                        &::before,
+                        &::after {
+                            opacity: .6;
+                        }
+                    }
+                }
+
+                .settingsDiv {
+                    .settingsContainer {
+                        backdrop-filter: blur(.5rem);
+                    }
+                }
+            }
+        }
+    }
 }
 
 img {
@@ -34,7 +55,3 @@ button {
     background: none;
     border: none;
 }
-
-// html {
-//     background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
-// }

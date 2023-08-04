@@ -1,23 +1,14 @@
-import { configureStore, createSlice } from '@reduxjs/toolkit'
+import { configureStore } from '@reduxjs/toolkit'
 import themeReducer from './themeSlice.js'
-
-const settingsVisibilitySlice = createSlice({
-    name: 'settingsVisibility',
-    initialState: false,
-    reducers: {
-        toggleSettings: (state) => {
-            return !state
-        },
-    },
-})
+import performanceReducer from './performanceSlice.js'
+import settingsReducer from './settingsSlice.js'
 
 const store = configureStore({
     reducer: {
+        performance: performanceReducer,
         theme: themeReducer,
-        settingsVisibility: settingsVisibilitySlice.reducer,
+        settingsVisibility: settingsReducer,
     },
-})
-
-export const { toggleSettings } = settingsVisibilitySlice.actions
+});
 
 export default store

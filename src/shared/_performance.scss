@@ -1,0 +1,21 @@
+body {
+    font-family: 'Segoe UI', Calibri, Verdana, sans-serif;
+    overflow: hidden;
+    color: var(--secColor);
+    display: flex;
+    justify-content: center;
+
+    &.performance {
+        #root {
+            header {
+                backdrop-filter: blur(0) !important;
+
+                .settingsDiv {
+                    .settingsContainer {
+                        backdrop-filter: blur(0) !important;
+                    }
+                }
+            }
+        }
+    }
+}

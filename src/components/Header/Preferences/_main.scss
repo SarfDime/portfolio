@@ -30,6 +30,14 @@ header {
                 }
             }
 
+            &:active {
+                svg {
+                    color: var(--secAccent);
+                    animation: rotateAnimation .5s linear forwards;
+                }
+            }
+
+
             &:not(:hover) {
                 svg {
                     animation: returnAnimation .5s linear forwards;
@@ -45,12 +53,10 @@ header {
             position: absolute;
             display: grid;
             grid-template-rows: 0fr;
-
             gap: 1rem;
-            background: var(--tpPri);
+
             border-bottom-left-radius: 1.5rem;
             border-bottom-right-radius: 1.5rem;
-
             box-shadow: var(--paleAccent) 0 var(--shadowValue) 0, var(--shadowColorThree) 0 0 .65rem;
 
             width: 20rem;
@@ -60,17 +66,16 @@ header {
 
             transition: all .5s;
 
-            height: 15rem;
             padding-block: 0.5rem 1.5rem;
             padding-inline: 1.5rem;
             transform: translateY(-30rem);
 
-            .themeContainer {
+            div {
                 display: flex;
-                flex-direction: column;
                 align-items: flex-start;
+                flex-direction: column;
 
-                .themeTitle {
+                .settingsTitle {
                     position: relative;
                     text-align: center;
                     width: 100%;
@@ -87,60 +92,172 @@ header {
                     }
                 }
 
-                button {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    width: 100%;
-                    margin-block: .5rem;
-                    border: .15rem solid transparent;
-                    transition: all .3s ease-in-out;
+                &.performanceContainer {
+                    gap: 1rem;
 
-                    color: var(--secColor);
-                    box-shadow: var(--shadowColor) 0 .05rem .1rem 0;
+                    button {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        width: 100%;
+                        margin-block: .5rem;
+                        border: .15rem solid transparent;
+                        transition: all .3s ease-in-out;
 
-                    padding: .5rem;
-                    border-radius: 1rem;
+                        color: var(--secColor);
+                        box-shadow: var(--shadowColor) 0 .05rem .1rem 0;
 
-                    border-top-left-radius: 1rem;
-                    border-bottom-left-radius: .7rem;
+                        padding: .5rem;
+                        border-radius: 1rem;
 
-                    svg {
-                        width: 1.5rem;
-                    }
+                        border-top-left-radius: .8rem;
+                        border-bottom-left-radius: 1rem;
 
-                    p {
-                        font-size: medium;
-                    }
+                        cursor: pointer;
 
-                    &.currentTheme {
-                        pointer-events: none;
-                        color: var(--accent);
-                        background: var(--tpPri);
-                        border-color: var(--paleAccent);
-                        box-shadow: none;
-
-                        &:focus-visible {
-                            background: var(--tpPri);
+                        p {
+                            font-size: medium;
+                            transition: all .3s ease-in-out;
                         }
-                    }
 
-                    &:hover {
-                        background: var(--paleAccent);
+                        h3 {
+                            transition: all .2s ease-in-out;
 
-                        svg {
-                            path {
-                                &:first-child {
-                                    stroke-dashoffset: 100;
+                            span {
+                                transition: all .2s ease-in-out;
+
+                                &:last-child {
+                                    color: var(--tertAccent);
                                 }
                             }
+                        }
 
-                            animation: rotateAnimation2 .8s linear forwards;
+                        &.active {
+                            color: var(--accent);
+                            border-color: var(--paleAccent);
+                            box-shadow: none;
+
+                            &:focus-visible {
+                                background: var(--tpPri);
+                            }
+
+                            &:hover {
+                                background: none;
+                                border-color: var(--accent);
+                            }
+
+                            &:active {
+                                border-color: var(--paleAccent);
+                            }
+
+                            h3 {
+                                span {
+                                    &:first-child {
+                                        color: var(--accent);
+                                    }
+
+                                    &:last-child {
+                                        color: var(--secColor);
+                                    }
+                                }
+                            }
+                        }
+
+                        &:hover {
+                            background: var(--paleAccent);
+                        }
+
+                        &:focus-visible {
+                            background: var(--paleAccent);
+                        }
+
+                        &:active {
+                            border-color: var(--accent);
                         }
                     }
 
-                    &:focus-visible {
-                        background: var(--paleAccent);
+                    &::before {
+                        content: '';
+                        display: block;
+                        background: linear-gradient(45deg, var(--paleAccent) 0%, var(--accent) 50%, var(--paleAccent) 100%);
+                        margin-block: .5rem;
+                        height: .2rem;
+                        width: 100%;
+                    }
+                }
+
+                &.themeContainer {
+                    button {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        width: 100%;
+                        margin-block: .5rem;
+                        border: .15rem solid transparent;
+                        transition: all .3s ease-in-out;
+
+                        color: var(--secColor);
+                        box-shadow: var(--shadowColor) 0 .05rem .1rem 0;
+
+                        padding: .5rem;
+                        border-radius: 1rem;
+
+                        border-top-left-radius: 1rem;
+                        border-bottom-left-radius: .7rem;
+
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+
+                        svg {
+                            width: 1.5rem;
+
+                            path {
+                                &:first-child {
+                                    stroke-dasharray: 100;
+                                    stroke-dashoffset: 0;
+                                    transition: stroke-dashoffset .5s ease;
+                                }
+                            }
+                        }
+
+                        p {
+                            font-size: medium;
+                        }
+
+                        &.currentTheme {
+                            pointer-events: none;
+                            color: var(--accent);
+                            background: var(--tpPri);
+                            border-color: var(--paleAccent);
+                            box-shadow: none;
+
+                            &:focus-visible {
+                                background: var(--tpPri);
+                            }
+                        }
+
+                        &:hover {
+                            background: var(--paleAccent);
+
+                            svg {
+                                animation: rotateAnimation2 .7s linear forwards;
+                            }
+                        }
+
+                        &:focus-visible {
+                            background: var(--paleAccent);
+                        }
+
+                        &:active {
+                            svg {
+                                path {
+                                    &:first-child {
+                                        stroke-dashoffset: 100;
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -155,4 +272,8 @@ header {
             transform: translateY(0);
         }
     }
+}
+
+@media (max-width: 768px){
+    
 }

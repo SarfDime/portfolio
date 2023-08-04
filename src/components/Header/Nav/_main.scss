@@ -42,7 +42,7 @@ header {
                 inset: -3rem;
                 background-color: var(--secAccent);
                 transition-delay: transform 0.35s;
-                opacity: 0.6;
+                opacity: 0.2;
             }
 
             &::after {
@@ -50,7 +50,7 @@ header {
                 background-color: var(--accent);
                 transition-delay: transform 1.2s;
                 transition-delay: scale 1.2s;
-                opacity: 1;
+                opacity: .7;
             }
 
             &:first-child {
@@ -120,6 +120,20 @@ header {
                 &::before,
                 &::after {
                     background-color: var(--tertAccent);
+                }
+            }
+
+            &.performance {
+                &:hover {
+                    background-color: var(--paleAccent);
+                }
+
+                &:focus-visible {
+                    background-color: var(--paleAccent);
+                }
+
+                &:active {
+                    background-color: var(--accent);
                 }
             }
         }

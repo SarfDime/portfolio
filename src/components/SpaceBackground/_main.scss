@@ -1,0 +1,117 @@
+@mixin randomAnimation($numberOfStars) {
+    $twinkleCount: ceil($numberOfStars * 0.7); // 70% of stars for twinkle animation
+    $rotateLeftCount: ceil($numberOfStars * 0.15); // 15% of stars for rotateLeft animation
+    $rotateRightCount: ceil($numberOfStars * 0.15); // 15% of stars for rotateRight animation
+
+    @for $i from 1 through $numberOfStars {
+        $animationName: "";
+        $animationDuration: "";
+
+        // Randomly assign animation based on percentages
+        @if $i <=$twinkleCount {
+            $animationName: twinkling;
+            $animationDuration: 3s;
+        }
+
+        @else if $i <=$twinkleCount +$rotateLeftCount {
+            $animationName: rotateStarLeft;
+            $animationDuration: 550s;
+        }
+
+        @else if $i <=$twinkleCount +$rotateLeftCount +$rotateRightCount {
+            $animationName: rotateStarRight;
+            $animationDuration: 550s;
+        }
+
+        .star-#{$i} {
+            animation: #{$animationName} $animationDuration linear infinite;
+            animation-delay: random() * 30s;
+        }
+    }
+}
+
+// Could show warning in console, But that's because of formatting issues.
+
+
+.space-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    fill: transparent;
+    z-index: -1;
+    
+    @include randomAnimation(160);
+
+    .stars-scale {
+        fill: #ffffff;
+    }
+
+    .stars-twinkling {
+        fill: #ffffff;
+
+    }
+
+    @keyframes rotateStarLeft {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        50% {
+            transform: rotate(360deg);
+        }
+
+        100% {
+            transform: rotate(0deg);
+        }
+    }
+
+    @keyframes rotateStarRight {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        50% {
+            transform: rotate(-360deg);
+        }
+
+        100% {
+            transform: rotate(0deg);
+        }
+    }
+
+    @keyframes twinkling {
+        0% {
+            opacity: 0.2;
+        }
+
+        50% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0.2;
+        }
+    }
+}
+
+.space-background-enter-active {
+    opacity: 0;
+    transform: scale(0);
+}
+
+.space-background-exit-active{
+    transform: scale(0);
+    opacity: 0;
+    transition: opacity 200ms ease, transform 400ms ease;
+}
+
+.space-background-enter-done {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 200ms ease, transform 500ms ease;
+}

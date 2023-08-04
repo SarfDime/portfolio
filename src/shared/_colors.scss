@@ -19,11 +19,7 @@
     --tpSec: rgba(255, 255, 255, 0.2);
     --secColor: rgb(255, 255, 255);
 
-    // --secAccent: rgb(50, 205, 232);
-    // --accent: rgb(232, 180, 47);
-    // --tertAccent: rgb(109, 220, 39);
-
-    --accent: rgb(255, 102, 229);
+    --accent: rgb(216, 141, 255);
     --secAccent: rgb(78, 199, 255);
     --tertAccent: rgb(255, 183, 82);
 
@@ -31,8 +27,20 @@
     --shadowValue: 0.05rem;
     --shadowColorThree: rgba(177, 177, 177, 0.11);
 
-    --paleAccent: rgba(255, 84, 232, 0.489);
-    // --paleAccent: rgba(232, 180, 47, 0.489);
+    --paleAccent: rgba(216, 141, 255, 0.489);
     
     background: radial-gradient(circle at center, #1b2735 0%, #090a0f 100%);
+
+    #root {
+        header {
+            nav {
+                button {
+                    &::before,
+                    &::after {
+                        opacity: .6;
+                    }
+                }
+            }
+        }
+    }
 }
