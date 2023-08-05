@@ -17,6 +17,9 @@ body {
     display: flex;
     justify-content: center;
 
+    height: 100vh;
+    height: 100svh;
+
     &.dark-mode {
         #root {
             header {
@@ -24,6 +27,7 @@ body {
 
                 nav {
                     button {
+
                         &::before,
                         &::after {
                             opacity: .6;
@@ -31,8 +35,54 @@ body {
                     }
                 }
 
-                .settingsDiv {
-                    .settingsContainer {
+                .settingsContainer {
+                    backdrop-filter: blur(.5rem);
+                }
+            }
+        }
+    }
+
+    &.light-mode {
+        #root {
+            header {
+                backdrop-filter: none!important;
+
+                .settingsContainer {
+                    backdrop-filter: blur(.5rem);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    body {
+        &.dark-mode {
+            #root {
+                header {
+                    backdrop-filter: none!important;
+
+                    nav {
+                        backdrop-filter: blur(.5rem);
+                    }
+
+                    #headerLogo, #settingsButton{
+                        backdrop-filter: blur(.5rem);
+                    }
+                }
+            }
+        }
+
+        &.light-mode {
+            #root {
+                header {
+                    backdrop-filter: none!important;
+
+                    nav {
+                        backdrop-filter: none!important;
+                    }
+
+                    #headerLogo, #settingsButton{
                         backdrop-filter: blur(.5rem);
                     }
                 }

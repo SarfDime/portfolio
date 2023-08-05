@@ -11,6 +11,8 @@
     --shadowValue: 0.1rem;
     --shadowColorThree: rgba(17, 17, 26, 0.05);
     --paleAccent: rgba(26, 216, 169, 0.489);
+
+    --extraPrimary: rgb(255, 255, 255);
 }
 
 .dark-mode {
@@ -28,6 +30,8 @@
     --shadowColorThree: rgba(177, 177, 177, 0.11);
 
     --paleAccent: rgba(216, 141, 255, 0.489);
+
+    --extraPrimary: rgb(17, 25, 35);
     
     background: radial-gradient(circle at center, #1b2735 0%, #090a0f 100%);
 

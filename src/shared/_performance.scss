@@ -1,18 +1,39 @@
 body {
-    font-family: 'Segoe UI', Calibri, Verdana, sans-serif;
-    overflow: hidden;
-    color: var(--secColor);
-    display: flex;
-    justify-content: center;
-
     &.performance {
         #root {
             header {
                 backdrop-filter: blur(0) !important;
 
-                .settingsDiv {
+                .settingsContainer {
+                    backdrop-filter: blur(0) !important;
+                    background-color: var(--extraPrimary);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    body {
+        &.performance {
+            #root {
+                header {
+                    backdrop-filter: blur(0) !important;
+
+                    nav {
+                        backdrop-filter: none !important;
+                        background-color: var(--extraPrimary);
+                    }
+
+                    #headerLogo,
+                    #settingsButton {
+                        backdrop-filter: none !important;
+                        background-color: var(--extraPrimary);
+                    }
+
                     .settingsContainer {
                         backdrop-filter: blur(0) !important;
+                        background-color: var(--extraPrimary);
                     }
                 }
             }

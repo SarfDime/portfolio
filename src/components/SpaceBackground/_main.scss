@@ -44,16 +44,14 @@
     overflow: hidden;
     fill: transparent;
     z-index: -1;
-    
+
+    user-select: none;
+    pointer-events: none;
+
     @include randomAnimation(160);
 
-    .stars-scale {
+    .star {
         fill: #ffffff;
-    }
-
-    .stars-twinkling {
-        fill: #ffffff;
-
     }
 
     @keyframes rotateStarLeft {
@@ -104,7 +102,7 @@
     transform: scale(0);
 }
 
-.space-background-exit-active{
+.space-background-exit-active {
     transform: scale(0);
     opacity: 0;
     transition: opacity 200ms ease, transform 400ms ease;
