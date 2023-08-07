@@ -23,7 +23,6 @@ function App() {
     <>
       <BrowserRouter>
         <Header />
-
         <SpaceBackground numberOfStars={280} />
 
         <Routes>

@@ -56,7 +56,6 @@ export default function Projects() {
                                 <h3>Visit Repo</h3>
                             </a>
                         </div>
-
                     </div>
                     <div className='projectItem' id="item-1">
                         <div>
@@ -72,7 +71,53 @@ export default function Projects() {
                         </div>
                         <p>some of my smaller projects</p>
                     </div>
-                    <div className='projectItem' id="item-2">&nbsp;</div>
+                    <div className='projectItem' id="item-2">
+                        <h1 className='weatherTitle'>weather</h1>
+
+                        <p className='weatherSubTitle'>weather app with nice ui</p>
+
+                        <div className='weatherGradient'>
+                        </div>
+
+                        <div className='weatherLinks'>
+                            <a className='casSiteLink' href="https://clickandship-sedc.github.io/store/" target="_blank" rel="noopener noreferrer">
+                                <svg viewBox="0 0 24 24">
+                                    <g fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="1.5">
+                                        <path d="M15.197 3.355c1.673-1.68 4.25-1.816 5.757-.305c1.506 1.512 1.37 4.1-.303 5.78l-2.424 2.433M10.047 14c-1.507-1.512-1.37-4.1.302-5.779L12.5 6.062" />
+                                        <path d="M13.954 10c1.506 1.512 1.37 4.1-.303 5.779l-2.424 2.433l-2.424 2.433c-1.673 1.68-4.25 1.816-5.757.305c-1.506-1.512-1.37-4.1.303-5.78l2.424-2.433" />
+                                    </g>
+                                </svg>
+                                <h3>Visit Site</h3>
+                            </a>
+                            <a className='casGitLink' href="https://github.com/sedc-codecademy/sp2023-cp02-dsw-4/tree/master" target="_blank" rel="noopener noreferrer">
+                                <svg viewBox="0 0 24 24">
+                                    <g fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="1.5">
+                                        <path d="m15.5 9l.172.172c1.333 1.333 2 2 2 2.828c0 .828-.667 1.495-2 2.828L15.5 15m-2.206-7.83L12 12l-1.294 4.83M8.5 9l-.172.172c-1.333 1.333-2 2-2 2.828c0 .828.667 1.495 2 2.828L8.5 15" />
+                                        <path d="M7 3.338A9.954 9.954 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5" />
+                                    </g>
+                                </svg>
+                                <h3>Visit Repo</h3>
+                            </a>
+                        </div>
+
+                        <svg className='weatherLogo sunLogo' viewBox="0 0 24 24">
+                            <g fill="currentColor">
+                                <path d="M17 12a5 5 0 1 1-10 0a5 5 0 0 1 10 0Z" />
+                                <path fill-rule="evenodd" d="M12 1.25a.75.75 0 0 1 .75.75v2a.75.75 0 0 1-1.5 0V2a.75.75 0 0 1 .75-.75ZM1.25 12a.75.75 0 0 1 .75-.75h2a.75.75 0 0 1 0 1.5H2a.75.75 0 0 1-.75-.75Zm18 0a.75.75 0 0 1 .75-.75h2a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1-.75-.75ZM12 19.25a.75.75 0 0 1 .75.75v2a.75.75 0 0 1-1.5 0v-2a.75.75 0 0 1 .75-.75Z" clip-rule="evenodd" />
+                                <path d="M3.67 3.716a.75.75 0 0 1 1.059-.048L6.95 5.7a.75.75 0 0 1-1.012 1.107L3.717 4.775a.75.75 0 0 1-.048-1.06Zm16.662 0a.75.75 0 0 1-.047 1.06l-2.223 2.03A.75.75 0 1 1 17.05 5.7l2.222-2.032a.75.75 0 0 1 1.06.048Zm-3.306 13.309a.75.75 0 0 1 1.06 0l2.223 2.222a.75.75 0 1 1-1.061 1.06l-2.222-2.222a.75.75 0 0 1 0-1.06Zm-10.051 0a.75.75 0 0 1 0 1.06l-2.222 2.223a.75.75 0 0 1-1.06-1.06l2.222-2.223a.75.75 0 0 1 1.06 0Z" opacity=".5" />
+                            </g>
+                        </svg>
+
+                        <svg className='weatherLogo moonLogo' viewBox="0 0 24 24">
+                            <g>
+                                <path d="M19.9 2.307a.483.483 0 0 0-.9 0l-.43 1.095a.484.484 0 0 1-.272.274l-1.091.432a.486.486 0 0 0 0 .903l1.091.432a.48.48 0 0 1 .272.273L19 6.81c.162.41.74.41.9 0l.43-1.095a.484.484 0 0 1 .273-.273l1.091-.432a.486.486 0 0 0 0-.903l-1.091-.432a.484.484 0 0 1-.273-.274l-.43-1.095ZM16.033 8.13a.483.483 0 0 0-.9 0l-.157.399a.484.484 0 0 1-.272.273l-.398.158a.486.486 0 0 0 0 .903l.398.157c.125.05.223.148.272.274l.157.399c.161.41.739.41.9 0l.157-.4a.484.484 0 0 1 .272-.273l.398-.157a.486.486 0 0 0 0-.903l-.398-.158a.484.484 0 0 1-.272-.273l-.157-.4Z" />
+
+                                <path fill="currentColor" d="m21.067 11.857l-.642-.388l.642.388Zm-8.924-8.924l-.388-.642l.388.642Zm-4.767 17.08a.75.75 0 1 0-.752 1.298l.752-1.298Zm-4.687-2.638a.75.75 0 1 0 1.298-.75l-1.298.75ZM21.25 12A9.25 9.25 0 0 1 12 21.25v1.5c5.937 0 10.75-4.813 10.75-10.75h-1.5Zm-18.5 0A9.25 9.25 0 0 1 12 2.75v-1.5C6.063 1.25 1.25 6.063 1.25 12h1.5Zm12.75 2.25A5.75 5.75 0 0 1 9.75 8.5h-1.5a7.25 7.25 0 0 0 7.25 7.25v-1.5Zm4.925-2.781A5.746 5.746 0 0 1 15.5 14.25v1.5a7.247 7.247 0 0 0 6.21-3.505l-1.285-.776ZM9.75 8.5a5.747 5.747 0 0 1 2.781-4.925l-.776-1.284A7.246 7.246 0 0 0 8.25 8.5h1.5ZM12 2.75a.384.384 0 0 1-.268-.118a.285.285 0 0 1-.082-.155c-.004-.031-.002-.121.105-.186l.776 1.284c.503-.304.665-.861.606-1.299c-.062-.455-.42-1.026-1.137-1.026v1.5Zm9.71 9.495c-.066.107-.156.109-.187.105a.285.285 0 0 1-.155-.082a.384.384 0 0 1-.118-.268h1.5c0-.717-.571-1.075-1.026-1.137c-.438-.059-.995.103-1.299.606l1.284.776ZM12 21.25a9.204 9.204 0 0 1-4.624-1.237l-.752 1.298A10.704 10.704 0 0 0 12 22.75v-1.5Zm-8.013-4.625A9.204 9.204 0 0 1 2.75 12h-1.5a10.7 10.7 0 0 0 1.439 5.375l1.298-.75Z" />
+                            </g>
+                        </svg>
+
+
+                    </div>
                     <div className='projectItem' id="item-3">
                         <h2>online shop rest api in nest<span>.</span><span>js</span> with postre<span>sql</span></h2>
                         <div>
@@ -109,7 +154,7 @@ export default function Projects() {
                         </div>
 
                         <p className='sscSubTitle'>dynamic svg rating</p>
-                        
+
                         <a className='sscLink' href="https://codepen.io/SarfDime/pen/wvQEagY" target="_blank" rel="noopener noreferrer">
                             <svg viewBox="0 0 24 24">
                                 <g fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="1.5">

@@ -12,8 +12,18 @@ body {
 
             .projectsMain {
                 .angry-grid {
-                    .projectItem{
+                    .projectItem {
                         backdrop-filter: blur(0) !important;
+
+                        &#item-2 {
+
+                            .weatherLinks {
+                                a {
+                                    background-color: var(--extraPrimary);
+                                    backdrop-filter: blur(0) !important;
+                                }
+                            }
+                        }
                     }
                 }
             }
