@@ -13,12 +13,12 @@
             $animationDuration: 3s;
         }
 
-        @else if $i <=$twinkleCount +$rotateLeftCount {
+        @else if $i <=$twinkleCount + $rotateLeftCount {
             $animationName: rotateStarLeft;
             $animationDuration: 550s;
         }
 
-        @else if $i <=$twinkleCount +$rotateLeftCount +$rotateRightCount {
+        @else if $i <=$twinkleCount + $rotateLeftCount + $rotateRightCount {
             $animationName: rotateStarRight;
             $animationDuration: 550s;
         }
@@ -43,7 +43,7 @@
     height: 100%;
     overflow: hidden;
     fill: transparent;
-    z-index: -1;
+    z-index: -3;
 
     user-select: none;
     pointer-events: none;

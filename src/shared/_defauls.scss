@@ -12,13 +12,19 @@
 
 body {
     font-family: 'Segoe UI', Calibri, Verdana, sans-serif;
-    overflow: hidden;
+    overflow-x: hidden;
     color: var(--secColor);
     display: flex;
     justify-content: center;
 
-    height: 100vh;
-    height: 100svh;
+    // min-height: 100vh;
+    // min-height: 100svh;
+    height: 100%;
+
+    #root{
+        // height: 100%;
+        // width: 100%;
+    }
 
     &.dark-mode {
         #root {
@@ -39,6 +45,14 @@ body {
                     backdrop-filter: blur(.5rem);
                 }
             }
+
+            .projectsMain {
+                .angry-grid {
+                    .projectItem{
+                        backdrop-filter: blur(.5rem);
+                    }
+                }
+            }
         }
     }
 
@@ -49,6 +63,14 @@ body {
 
                 .settingsContainer {
                     backdrop-filter: blur(.5rem);
+                }
+            }
+
+            .projectsMain {
+                .angry-grid {
+                    .projectItem{
+                        backdrop-filter: blur(.5rem);
+                    }
                 }
             }
         }

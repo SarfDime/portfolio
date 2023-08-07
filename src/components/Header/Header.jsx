@@ -10,7 +10,8 @@ export default function Header() {
         dispatch(toggleSettings())
     }
 
-    const githubURL = 'https://github.com/SarfDime/portfolio';
+    const githubURL = 'https://github.com/SarfDime/portfolio'
+    
     return (
         <header>
             <a id='headerLogo' href={githubURL} target="_blank" rel="noopener noreferrer">

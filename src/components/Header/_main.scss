@@ -4,12 +4,17 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 1.6rem 2rem;
+    padding: 1rem 2rem;
     gap: 1rem;
-    border-bottom-left-radius: 3rem;
-    border-bottom-right-radius: 3rem;
+    border-bottom-left-radius: 4.5rem;
+    border-bottom-right-radius: 4.5rem;
+
+    width: fit-content;
+    margin-inline: auto;
 
     box-shadow: var(--paleAccent) 0 var(--shadowValue) 0, var(--shadowColorThree) 0 0 .65rem;
+
+    z-index: 5;
 
     @keyframes rotateAnimation {
         0% {
@@ -76,12 +81,25 @@ header {
         padding: .4rem;
         margin-right: .3rem;
     }
+
+    animation: slideIn 1.3s forwards;
 }
+
+@keyframes slideIn {
+    from {
+        top: -100%;
+    }
+
+    to {
+        top: 0;
+    }
+}
+
 
 @media (max-width: 1400px) {
     header {
         gap: .7rem;
-        padding: 1rem 1.3rem;
+        padding: .5rem 1.3rem;
         border-bottom-left-radius: 2.5rem;
         border-bottom-right-radius: 2.5rem;
 
@@ -227,7 +245,7 @@ header {
         gap: 0rem;
         padding: 0;
         box-shadow: none;
-        top: .2rem;
+        top: .2rem!important;
 
         #headerLogo {
             position: relative;

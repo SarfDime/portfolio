@@ -9,6 +9,14 @@ body {
                     background-color: var(--extraPrimary);
                 }
             }
+
+            .projectsMain {
+                .angry-grid {
+                    .projectItem{
+                        backdrop-filter: blur(0) !important;
+                    }
+                }
+            }
         }
     }
 }
