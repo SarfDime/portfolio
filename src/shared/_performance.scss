@@ -15,11 +15,18 @@ body {
                     .projectItem {
                         backdrop-filter: blur(0) !important;
 
-                        &#item-2 {
-
+                        &.item-2 {
                             .weatherLinks {
                                 a {
                                     background-color: var(--extraPrimary);
+                                    backdrop-filter: blur(0) !important;
+                                }
+                            }
+                        }
+
+                        &.item-0 {
+                            .casLinks {
+                                a {
                                     backdrop-filter: blur(0) !important;
                                 }
                             }

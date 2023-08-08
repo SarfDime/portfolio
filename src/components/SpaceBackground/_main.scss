@@ -28,17 +28,12 @@
             animation-delay: random() * 30s;
         }
     }
-}
-
-// Could show warning in console, But that's because of formatting issues.
-
+} // Could show warning in console, But that's because of formatting issues.
 
 .space-background {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
     width: 100%;
     height: 100%;
     overflow: hidden;

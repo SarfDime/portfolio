@@ -80,6 +80,26 @@ header {
         border-radius: 50%;
         padding: .4rem;
         margin-right: .3rem;
+
+        svg {
+            transition: color 400ms ease;
+        }
+
+        &:focus-visible {
+            color: var(--accent);
+        }
+
+        &:hover {
+            color: var(--tertAccent);
+
+            svg {
+                path {
+                    stroke-dashoffset: 100;
+                }
+
+                animation: rotateAnimation2 .5s linear forwards;
+            }
+        }
     }
 
     animation: slideIn 1.3s forwards;
@@ -245,7 +265,7 @@ header {
         gap: 0rem;
         padding: 0;
         box-shadow: none;
-        top: .2rem!important;
+        top: .2rem !important;
 
         #headerLogo {
             position: relative;

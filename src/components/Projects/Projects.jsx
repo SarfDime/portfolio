@@ -5,7 +5,7 @@ export default function Projects() {
         <>
             <main className='projectsMain'>
                 <div className="angry-grid">
-                    <div className='projectItem' id="item-0">
+                    <div className='projectItem item-0'>
                         <div className='casTitle'>
                             <h1>click</h1>
                             <h1>&</h1>
@@ -57,7 +57,7 @@ export default function Projects() {
                             </a>
                         </div>
                     </div>
-                    <div className='projectItem' id="item-1">
+                    <div className='projectItem item-1'>
                         <div>
                             <a href="https://sarfdime.github.io/Movies/" target="_blank" rel="noopener noreferrer">
                                 <h3>movies</h3>
@@ -71,16 +71,16 @@ export default function Projects() {
                         </div>
                         <p>some of my smaller projects</p>
                     </div>
-                    <div className='projectItem' id="item-2">
+                    <div className='projectItem item-2'>
                         <h1 className='weatherTitle'>weather</h1>
 
-                        <p className='weatherSubTitle'>weather app with nice ui</p>
+                        <p className='weatherSubTitle'>built with open-meteo Api</p>
 
                         <div className='weatherGradient'>
                         </div>
 
                         <div className='weatherLinks'>
-                            <a className='casSiteLink' href="https://clickandship-sedc.github.io/store/" target="_blank" rel="noopener noreferrer">
+                            <a className='weatherSiteLink' href="https://sarfdime.github.io/Weather/" target="_blank" rel="noopener noreferrer">
                                 <svg viewBox="0 0 24 24">
                                     <g fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="1.5">
                                         <path d="M15.197 3.355c1.673-1.68 4.25-1.816 5.757-.305c1.506 1.512 1.37 4.1-.303 5.78l-2.424 2.433M10.047 14c-1.507-1.512-1.37-4.1.302-5.779L12.5 6.062" />
@@ -89,7 +89,7 @@ export default function Projects() {
                                 </svg>
                                 <h3>Visit Site</h3>
                             </a>
-                            <a className='casGitLink' href="https://github.com/sedc-codecademy/sp2023-cp02-dsw-4/tree/master" target="_blank" rel="noopener noreferrer">
+                            <a className='weatherGitLink' href="https://github.com/SarfDime/Weather" target="_blank" rel="noopener noreferrer">
                                 <svg viewBox="0 0 24 24">
                                     <g fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="1.5">
                                         <path d="m15.5 9l.172.172c1.333 1.333 2 2 2 2.828c0 .828-.667 1.495-2 2.828L15.5 15m-2.206-7.83L12 12l-1.294 4.83M8.5 9l-.172.172c-1.333 1.333-2 2-2 2.828c0 .828.667 1.495 2 2.828L8.5 15" />
@@ -103,7 +103,7 @@ export default function Projects() {
                         <svg className='weatherLogo sunLogo' viewBox="0 0 24 24">
                             <g fill="currentColor">
                                 <path d="M17 12a5 5 0 1 1-10 0a5 5 0 0 1 10 0Z" />
-                                <path fill-rule="evenodd" d="M12 1.25a.75.75 0 0 1 .75.75v2a.75.75 0 0 1-1.5 0V2a.75.75 0 0 1 .75-.75ZM1.25 12a.75.75 0 0 1 .75-.75h2a.75.75 0 0 1 0 1.5H2a.75.75 0 0 1-.75-.75Zm18 0a.75.75 0 0 1 .75-.75h2a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1-.75-.75ZM12 19.25a.75.75 0 0 1 .75.75v2a.75.75 0 0 1-1.5 0v-2a.75.75 0 0 1 .75-.75Z" clip-rule="evenodd" />
+                                <path fillRule="evenodd" d="M12 1.25a.75.75 0 0 1 .75.75v2a.75.75 0 0 1-1.5 0V2a.75.75 0 0 1 .75-.75ZM1.25 12a.75.75 0 0 1 .75-.75h2a.75.75 0 0 1 0 1.5H2a.75.75 0 0 1-.75-.75Zm18 0a.75.75 0 0 1 .75-.75h2a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1-.75-.75ZM12 19.25a.75.75 0 0 1 .75.75v2a.75.75 0 0 1-1.5 0v-2a.75.75 0 0 1 .75-.75Z" clipRule="evenodd" />
                                 <path d="M3.67 3.716a.75.75 0 0 1 1.059-.048L6.95 5.7a.75.75 0 0 1-1.012 1.107L3.717 4.775a.75.75 0 0 1-.048-1.06Zm16.662 0a.75.75 0 0 1-.047 1.06l-2.223 2.03A.75.75 0 1 1 17.05 5.7l2.222-2.032a.75.75 0 0 1 1.06.048Zm-3.306 13.309a.75.75 0 0 1 1.06 0l2.223 2.222a.75.75 0 1 1-1.061 1.06l-2.222-2.222a.75.75 0 0 1 0-1.06Zm-10.051 0a.75.75 0 0 1 0 1.06l-2.222 2.223a.75.75 0 0 1-1.06-1.06l2.222-2.223a.75.75 0 0 1 1.06 0Z" opacity=".5" />
                             </g>
                         </svg>
@@ -118,7 +118,7 @@ export default function Projects() {
 
 
                     </div>
-                    <div className='projectItem' id="item-3">
+                    <div className='projectItem item-3'>
                         <h2>online shop rest api in nest<span>.</span><span>js</span> with postre<span>sql</span></h2>
                         <div>
                             <a href="https://github.com/SarfDime/AdvancedNodeHomeworks/tree/main/nestjs/myPrismaApp" target="_blank" rel="noopener noreferrer">
@@ -132,7 +132,7 @@ export default function Projects() {
                             </a>
                         </div>
                     </div>
-                    <div className='projectItem' id="item-4">
+                    <div className='projectItem item-4'>
                         <svg className='sscLogo' viewBox="0 0 24 24">
                             <g fill="url(#linearSscLogo)" stroke="currentColor">
                                 <path strokeWidth="1.5" d="M10.08 7.897C11.157 5.966 11.695 5 12.5 5c.805 0 1.343.966 2.42 2.897l.278.5c.306.549.46.823.698 1.004c.238.181.535.248 1.13.383l.54.122c2.091.473 3.137.71 3.385 1.51c.249.8-.464 1.633-1.89 3.3l-.368.43c-.405.474-.607.711-.699 1.004c-.09.293-.06.609.001 1.24l.056.576c.216 2.224.323 3.336-.328 3.83c-.651.495-1.63.044-3.587-.857l-.507-.234c-.556-.256-.834-.384-1.129-.384c-.295 0-.573.128-1.13.384l-.506.234c-1.957.9-2.936 1.352-3.587.857c-.651-.494-.543-1.606-.328-3.83l.056-.575c.061-.632.092-.948 0-1.24c-.09-.294-.293-.53-.698-1.004l-.369-.432c-1.425-1.666-2.138-2.5-1.89-3.3c.25-.8 1.295-1.036 3.386-1.509l.54-.122c.595-.135.892-.202 1.13-.383c.239-.18.392-.455.698-1.004l.278-.5Z" />
@@ -168,7 +168,7 @@ export default function Projects() {
                         <div className='sscGradient'>
                         </div>
                     </div>
-                    <div className='projectItem' id="item-5">
+                    <div className='projectItem item-5'>
                         <h2>my other codepens</h2>
                         <div>
                             <a href="https://codepen.io/SarfDime/pen/GRwPYZo" target="_blank" rel="noopener noreferrer">cool hover effect</a>

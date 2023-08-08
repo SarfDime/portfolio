@@ -13,6 +13,10 @@ header {
             }
         }
 
+        &:focus-visible {
+            color: var(--secAccent);
+        }
+
         &:hover {
             svg {
                 path {

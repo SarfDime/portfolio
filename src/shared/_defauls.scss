@@ -51,7 +51,15 @@ body {
                     .projectItem {
                         backdrop-filter: blur(.5rem);
 
-                        &#item-2 {
+                        &.item-0 {
+                            .casLinks {
+                                a {
+                                    backdrop-filter: blur(.5rem);
+                                }
+                            }
+                        }
+
+                        &.item-2 {
                             .weatherLogo {
                                 &.sunLogo {
                                     display: none;
@@ -89,7 +97,7 @@ body {
                     .projectItem {
                         backdrop-filter: blur(.5rem);
 
-                        &#item-2 {
+                        &.item-2 {
                             .weatherLogo {
                                 &.sunLogo {
                                     display: block;
