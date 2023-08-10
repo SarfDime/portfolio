@@ -39,6 +39,7 @@
     --extraPrimary: rgb(17, 25, 35);
 
     background: radial-gradient(circle at center, #1b2735 0%, #090a0f 100%);
+    background-repeat: no-repeat;
 
     #root {
         header {

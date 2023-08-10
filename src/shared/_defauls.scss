@@ -17,14 +17,8 @@ body {
     display: flex;
     justify-content: center;
 
-    // min-height: 100vh;
-    // min-height: 100svh;
-    height: 100%;
-
-    #root {
-        // height: 100%;
-        // width: 100%;
-    }
+    min-height: 100vh;
+    min-height: 100svh;
 
     &.dark-mode {
         #root {
@@ -85,7 +79,7 @@ body {
     &.light-mode {
         #root {
             header {
-                backdrop-filter: none !important;
+                backdrop-filter: blur(.5rem);
 
                 .settingsContainer {
                     backdrop-filter: blur(.5rem);

@@ -1,9 +1,20 @@
-import React from 'react'
-
+import React, { useRef } from 'react'
+import { CSSTransition } from 'react-transition-group'
+import { useSelector } from 'react-redux';
 export default function Projects() {
+    const projectsRef = useRef() // Create a ref for the main element
+    const currentPath = useSelector((state) => state.path.currentPath);
+    const isProjectsPath = currentPath === '/projects'
+    
     return (
-        <>
-            <main className='projectsMain'>
+        <CSSTransition
+            in={isProjectsPath}
+            timeout={250}
+            classNames="projectsMain"
+            unmountOnExit
+            nodeRef={projectsRef}
+        >
+            <main className='projectsMain' ref={projectsRef} >
                 <div className="angry-grid">
                     <div className='projectItem item-0'>
                         <div className='casTitle'>
@@ -176,8 +187,8 @@ export default function Projects() {
                         </div>
                     </div>
                 </div>
-            </main>
-        </>
+            </main >
+        </CSSTransition>
     )
 }
 

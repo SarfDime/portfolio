@@ -646,6 +646,7 @@
             }
 
             div {
+                position: relative;
                 left: 2rem;
 
                 a {
@@ -732,6 +733,94 @@
                     }
                 }
             }
+        }
+    }
+}
+
+.projectsMain-enter-active {
+    opacity: 0;
+    .angry-grid {
+        .item-0 {
+            transform: translateY(130vh);
+        }
+        .item-1 {
+            transform: translateX(100vw);
+        }
+        .item-2 {
+            transform: translateY(-130vh);
+        }
+        .item-3 {
+            transform: translateX(-100vw);
+        }
+        .item-4 {
+            transform: translateX(100vw);
+        }
+        .item-5 {
+            transform: translateY(-130vh);
+        }
+    }
+}
+
+.projectsMain-exit-active {
+    opacity: 0;
+    transition: opacity 750ms ease;
+
+    .angry-grid {
+        .item-0 {
+            transform: translateY(130vh);
+            transition: transform .6s cubic-bezier(0.19, 0, 0.22, .9);
+        }
+        .item-1 {
+            transform: translateX(100vw);
+            transition: transform .3s cubic-bezier(0.19, 0, 0.22, .8);
+        }
+        .item-2 {
+            transform: translateY(-130vh);
+            transition: transform .7s cubic-bezier(0.19, 0, 0.22, .8);
+        }
+        .item-3 {
+            transform: translateX(-100vw);
+            transition: transform .3s cubic-bezier(0.19, 0, 0.22, .8);
+        }
+        .item-4 {
+            transform: translateX(100vw);
+            transition: transform .7s cubic-bezier(0.19, 0, 0.22, .8);
+        }
+        .item-5 {
+            transform: translateY(-130vh);
+            transition: transform 1s cubic-bezier(0.19, 0, 0.22, .8);
+        }
+    }
+}
+
+.projectsMain-enter-done {
+    opacity: 1;
+    transition: opacity 150ms ease;
+
+    .angry-grid {
+        .projectItem {
+            transform: translate(0);
+            transition: transform .4s cubic-bezier(0.19, .9, 0.22, 1);
+        }
+
+        .item-1 {
+            transition: transform .8s cubic-bezier(0.19, .9, 0.22, 1);
+        }
+
+        .item-2 {
+            transition: transform .8s cubic-bezier(0.19, .9, 0.22, 1);
+        }
+
+        .item-3 {
+            transition: transform .8s cubic-bezier(0.19, .9, 0.22, 1);
+        }
+
+        .item-4 {
+            transition: transform 1s cubic-bezier(0.19, .9, 0.22, 1);
+        }
+
+        .item-5 {
+            transition: transform .4s cubic-bezier(0.19, .8, 0.22, 1);
         }
     }
 }
@@ -866,6 +955,51 @@
 }
 
 @media (max-width: 1150px) {
+    .projectsMain-enter-active {
+        .angry-grid {
+            .item-0 {
+                transform: translateX(130vw);
+            }
+            .item-1 {
+                transform: translateX(-100vw);
+            }
+            .item-2 {
+                transform: translateX(-130vw);
+            }
+            .item-3 {
+                transform: translateX(100vw);
+            }
+            .item-4 {
+                transform: translateX(-100vw);
+            }
+            .item-5 {
+                transform: translateX(130vw);
+            }
+        }
+    }
+    
+    .projectsMain-exit-active {
+        .angry-grid {
+            .item-0 {
+                transform: translateX(130vw);
+            }
+            .item-1 {
+                transform: translateX(-100vw);
+            }
+            .item-2 {
+                transform: translateX(-130vw);
+            }
+            .item-3 {
+                transform: translateX(100vw);
+            }
+            .item-4 {
+                transform: translateX(100vw);
+            }
+            .item-5 {
+                transform: translateX(-130vw);
+            }
+        }
+    }
     .projectsMain {
         height: unset;
         width: 70vw;
@@ -873,7 +1007,6 @@
         margin-inline: auto;
         margin-top: 1rem;
         overflow: hidden;
-
         .angry-grid {
             display: flex;
             flex-wrap: wrap;
@@ -937,6 +1070,7 @@
         margin-inline: auto;
         margin-top: 1rem;
         overflow: hidden;
+        
     }
 }
 
