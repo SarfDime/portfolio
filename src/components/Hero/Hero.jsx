@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Hero() {
     return (
-        <div>Hero</div>
+        <main className='mainComponent heroMain'>Hero</main>
     )
 }
 

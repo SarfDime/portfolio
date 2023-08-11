@@ -1,28 +1,119 @@
 header {
     nav {
-        height: 3rem;
+        position: fixed;
+        right: 1rem;
+        top: 1rem;
         display: flex;
         align-items: center;
         gap: 1rem;
+        animation: slideIn 1.3s forwards;
 
-        button {
+        .toggleNavButton {
             position: relative;
-            padding: .8rem 1.3rem;
-            border-radius: 1.5rem;
-            transition: 300ms ease;
-
-            overflow: hidden;
-
-            box-shadow: var(--shadowColor) 0 var(--shadowValue) .1rem 0;
+            box-shadow: var(--accent) 0 var(--shadowValue) .1rem 0;
             color: var(--secColor);
+            padding: 1rem;
+            border-radius: 5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            svg {
+                animation: returnAnimation3 .35s linear forwards;
+                width: 2.3rem;
+                height: 2.3rem;
+            }
+        }
+
+        #settingsButton {
+            position: absolute;
+            top: 130%;
+            right: .3rem;
+
+            padding: .7rem;
+            border-radius: 5rem;
+            transition: all 300ms ease;
+
+            box-shadow: var(--shadowColor) 0 var(--shadowValue) .15rem .1rem;
+            color: var(--tertAccent);
 
             outline: .1rem solid rgba(0, 0, 0, 0);
+
+            transform: translateX(130%);
 
             display: flex;
             align-items: center;
             gap: .5rem;
 
             font-size: large;
+
+            svg {
+                width: 2.3rem;
+                height: 2.3rem;
+
+                path {
+                    stroke-dasharray: 100;
+                    stroke-dashoffset: 0;
+                    transition: stroke-dashoffset 1s linear;
+                }
+            }
+
+            &:focus-visible {
+                color: var(--secAccent);
+            }
+
+            &:hover {
+                box-shadow: var(--tertAccent) 0 var(--shadowValue) .15rem .1rem;
+
+                svg {
+                    path {
+                        stroke-dashoffset: 100;
+                    }
+
+                    animation: rotateAnimation .5s linear forwards;
+                }
+            }
+
+            &:active {
+                box-shadow: var(--secAccent) 0 var(--shadowValue) .1rem 0;
+
+                svg {
+                    color: var(--secAccent);
+                    animation: rotateAnimation .5s linear forwards;
+                }
+            }
+
+            &:not(:hover) {
+                svg {
+                    animation: returnAnimation .5s linear forwards;
+
+                    path {
+                        stroke-dashoffset: 0;
+                    }
+                }
+            }
+        }
+
+        .nav-button {
+            position: relative;
+            padding: .8rem 1.3rem;
+            border-radius: 1.5rem;
+
+            background-color: var(--tpPri);
+
+            overflow: hidden;
+
+            box-shadow: var(--shadowColor) 0 var(--shadowValue) .15rem .1rem;
+            color: var(--secColor);
+
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+
+            font-size: large;
+
+            transform: translateY(-150%);
+            transition: transform 500ms ease;
 
             --origin: center;
             --scale: 0;
@@ -73,6 +164,7 @@ header {
             svg {
                 width: 2.3rem;
                 height: 2.3rem;
+
                 path {
                     &:last-child {
                         stroke-dasharray: 100;
@@ -115,11 +207,11 @@ header {
             }
 
             &.active {
-                font-size: larger;
-                padding: 1rem 1.5rem;
                 color: var(--accent);
                 pointer-events: none;
-                outline-color: var(--paleAccent);
+                transition: transform 300ms ease;
+
+                box-shadow: var(--accent) 0 var(--shadowValue) .15rem .1rem;
 
                 &::before,
                 &::after {
@@ -140,6 +232,56 @@ header {
                     background-color: var(--accent);
                 }
             }
+        }
+
+        &.nav-active {
+            .toggleNavButton {
+                svg {
+                    animation: rotateAnimation3 .45s linear forwards;
+                }
+            }
+
+            #settingsButton {
+                transform: translate(0);
+            }
+
+            .nav-button {
+                transform: translate(0);
+            }
+        }
+    }
+
+    @keyframes rotateAnimation3 {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        50% {
+            transform: rotate(-200deg);
+        }
+
+        100% {
+            transform: rotate(-180deg);
+        }
+    }
+
+    @keyframes returnAnimation3 {
+        0% {
+            transform: rotate(-180deg);
+        }
+
+        100% {
+            transform: rotate(0);
+        }
+    }
+
+    @keyframes slideIn {
+        from {
+            transform: translateX(150%);
+        }
+
+        to {
+            transform: translate(0)
         }
     }
 }

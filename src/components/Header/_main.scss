@@ -1,16 +1,8 @@
 header {
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 1.1rem 2rem;
-    gap: 1rem;
-    border-radius: 3rem;
-
-    width: fit-content;
-    margin-inline: auto;
-
+    // display: flex;
+    width: 100vw;
+    // height: 50vh;
     box-shadow: var(--paleAccent) .0 var(--shadowValue) 0, var(--shadowColorThree) 0 0 .3rem;
 
     z-index: 5;
@@ -72,6 +64,9 @@ header {
     }
 
     #headerLogo {
+        position: fixed;
+        top: .8rem;
+        left: .7rem;
         width: 3.5rem;
         height: 3.5rem;
         color: var(--secAccent);
@@ -80,16 +75,21 @@ header {
         padding: .4rem;
         margin-right: .3rem;
 
+        z-index: 5;
+        transition: all 400ms ease;
+
         svg {
             transition: color 400ms ease;
         }
 
         &:focus-visible {
-            color: var(--accent);
+            border-color: var(--paleAccent);
+            color: var(--paleAccent);
         }
 
         &:hover {
-            color: var(--tertAccent);
+            border-color: var(--paleAccent);
+            color: var(--paleAccent);
 
             svg {
                 path {
@@ -100,20 +100,7 @@ header {
             }
         }
     }
-
-    animation: slideIn 1.3s forwards;
 }
-
-@keyframes slideIn {
-    from {
-        top: -100%;
-    }
-
-    to {
-        top: 0;
-    }
-}
-
 
 @media (max-width: 1400px) {
     header {
@@ -123,39 +110,31 @@ header {
         border-bottom-right-radius: 2.5rem;
 
         #headerLogo {
-            width: 2.5rem;
-            height: 2.5rem;
-            padding: .3rem;
+            top: .5rem;
+            left: .5rem;
         }
 
         nav {
-            height: 2rem;
-            gap: .5rem;
+            right: .7rem;
+            top: .7rem;
 
-            button {
-                padding: .5rem 1rem;
-                font-size: small;
+            .nav-button {
+                padding: .6rem 1rem;
+            }
+
+            #settingsButton {
+                top: 120%;
+                right: .5rem;
 
                 svg {
-                    width: 1.5rem;
-                    height: 1.5rem;
+                    width: 2rem;
+                    height: 2rem;
                 }
-
-                &.active {
-                    font-size: medium;
-                    padding: .6rem 1.1rem;
-                }
-            }
-        }
-
-        #settingsButton {
-            svg {
-                width: 1.7rem;
-                height: 1.7rem;
             }
         }
 
         .settingsContainer {
+            top: 11rem;
             gap: .5rem;
             padding-bottom: .5rem;
             padding-inline: 1rem;
@@ -194,30 +173,38 @@ header {
 
 @media (max-width: 1150px) {
     header {
-        gap: .5rem;
+        #headerLogo {
+            top: .3rem;
+            left: .3rem;
+        }
 
-        #settingsButton {
-            svg {
-                width: 1.5rem;
-                height: 1.5rem;
+        nav {
+            right: .5rem;
+            top: .5rem;
+
+            .toggleNavButton {
+                padding: .8rem;
+            }
+
+            .nav-button {
+                padding: .5rem .8rem;
+            }
+
+            #settingsButton {
+                right: .3rem;
+
+                svg {
+                    width: 2rem;
+                    height: 2rem;
+                }
             }
         }
 
         .settingsContainer {
+            top: 10rem;
             gap: .5rem;
             padding-bottom: .5rem;
             padding-inline: 1rem;
-            top: 115%;
-            right: unset;
-            margin-inline: auto;
-
-            border-radius: 1rem;
-            box-shadow: none;
-
-            border-block: .15rem solid;
-            border-inline: .05rem solid var(--shadowColorThree);
-            border-color: var(--paleAccent);
-            transform: scale(0);
 
             div {
                 &.performanceContainer {
@@ -247,80 +234,83 @@ header {
                 }
             }
         }
-
-        .settingsContainer-enter-active,
-        .settingsContainer-exiting {
-            transform: scale(0);
-        }
-
-        .settingsContainer-enter-done {
-            transform: scale(1);
-        }
     }
 }
 
 @media (max-width: 800px) {
     header {
-        gap: 0rem;
-        padding: 0;
-        box-shadow: none;
-        top: .2rem !important;
-
         #headerLogo {
-            position: relative;
-            border: .1rem solid var(--paleAccent);
-            padding: .8rem;
-            height: 3.3rem;
-            width: 3.3rem;
-            border-radius: 2rem;
-            right: -1.3rem;
-            z-index: 1;
-        }
-
-        #settingsButton {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            border: .1rem solid var(--paleAccent);
-            padding: .8rem;
-            border-radius: 2rem;
-            left: -1.3rem;
-            z-index: 1;
-
-            svg {
-                width: 1.5rem;
-                height: 1.5rem;
-
-                path {
-                    stroke-dasharray: 0;
-                }
-            }
-
-            &:not(:hover) {
-                svg {
-                    animation: none;
-                }
-            }
-
-            &:hover {
-                svg {
-                    animation: none;
-                }
-            }
+            width: 3rem;
+            height: 3rem;
         }
 
         nav {
-            height: unset;
-            padding: .3rem 1.7rem;
-            border: .1rem solid var(--paleAccent);
-            gap: .5rem;
+            top: .3rem;
+            padding-inline: .1rem;
+            padding-bottom: .5rem;
+            transition: all 300ms ease;
+            border-radius: 3rem;
+            flex-direction: column;
 
-            button {
-                padding: .3rem;
-                box-shadow: none !important;
+            &.nav-active {
+                box-shadow: var(--accent) -.1rem .1rem var(--shadowValue);
+                background-color: var(--tpPri);
+                backdrop-filter: blur(.2rem);
+            }
+
+            .toggleNavButton {
+                order: 0;
+                
+                svg {
+                    width: 1.8rem;
+                    height: 1.8rem;
+                }
+            }
+
+            #settingsButton {
+                position: relative;
+                right: unset;
+                left: unset;
+                order: 5;
+                transform: translateX(200%);
+                box-shadow: var(--shadowColor) 0 var(--shadowValue) .05rem .05rem;
+
+                svg {
+                    width: 1.5rem;
+                    height: 1.5rem;
+
+                    path {
+                        stroke-dasharray: 0;
+                    }
+                }
+
+                &:not(:hover) {
+                    svg {
+                        animation: none;
+                    }
+                }
+
+                &:hover {
+                    box-shadow: var(--tertAccent) 0 var(--shadowValue) .05rem .05rem;
+
+                    svg {
+                        animation: none;
+                    }
+                }
+
+                &:active {
+                    box-shadow: var(--secAccent) 0 var(--shadowValue) .05rem .05rem;
+                }
+            }
+
+            .nav-button {
+                order: 1;
+                padding: .5rem;
                 border-radius: 50% !important;
+                box-shadow: var(--shadowColor) 0 var(--shadowValue) .05rem .05rem;
+                transform: translateX(200%);
+
+                backdrop-filter: blur(0) !important;
 
                 &::before,
                 &::after {
@@ -355,26 +345,21 @@ header {
                 }
 
                 &.active {
-                    padding: .3rem;
-                    box-shadow: none !important;
                     border-radius: 50% !important;
+                    box-shadow: var(--accent) 0 var(--shadowValue) .05rem .05rem;
                 }
             }
         }
 
         .settingsContainer {
+            top: .6rem;
+            right: 5rem;
             gap: 0;
             padding: 0;
-            top: 120%;
-            z-index: 0;
-
-            border-radius: 0;
-            border: none;
-            flex-direction: row;
-
-            border: .1rem solid var(--paleAccent);
+            box-shadow: none;
+            border: .15rem solid var(--paleAccent);
             border-radius: 1rem;
-
+            transform: translateY(-130%);
             overflow: hidden;
 
             div {
@@ -387,17 +372,14 @@ header {
 
                     button {
                         flex-direction: column;
-                        width: max-content;
                         gap: .5rem;
                         box-shadow: none;
                         margin: 0;
-                        width: 100%;
 
                         border-radius: 0;
                         border: none;
 
                         padding-block: 1.5rem;
-                        width: max-content;
 
                         p,
                         h3 {
@@ -425,21 +407,16 @@ header {
                 }
 
                 &.themeContainer {
-                    flex-direction: row;
-                    flex-wrap: wrap;
                     justify-content: center;
-                    gap: 0 .5rem;
+                    gap: .3rem .5rem;
 
-                    border-right: var(--paleAccent) .1rem solid;
-                    padding-bottom: .5rem;
+                    border-bottom: var(--paleAccent) .1rem solid;
+                    padding-inline: .5rem;
+                    padding-bottom: 1rem;
 
                     button {
-                        padding: .3rem .4rem;
-                        border-radius: 50%;
-                        width: unset;
-                        box-shadow: none;
                         margin: 0;
-                        margin-inline: 0;
+                        gap: 1rem;
 
                         svg {
                             width: 1.5rem;
@@ -460,16 +437,21 @@ header {
                             }
                         }
 
-                        p {
-                            display: none;
-                        }
-
                         svg {
                             width: 1.2rem;
                         }
                     }
                 }
             }
+        }
+
+        .settingsContainer-enter-active,
+        .settingsContainer-exiting {
+            transform: translateY(-130%);
+        }
+
+        .settingsContainer-enter-done {
+            transform: translate(0);
         }
     }
 }

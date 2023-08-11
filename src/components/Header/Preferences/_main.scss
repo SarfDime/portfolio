@@ -1,67 +1,21 @@
 header {
-    #settingsButton {
-        color: var(--tertAccent);
-
-        svg {
-            width: 2.3rem;
-            height: 2.3rem;
-
-            path {
-                stroke-dasharray: 100;
-                stroke-dashoffset: 0;
-                transition: stroke-dashoffset 1s linear;
-            }
-        }
-
-        &:focus-visible {
-            color: var(--secAccent);
-        }
-
-        &:hover {
-            svg {
-                path {
-                    stroke-dashoffset: 100;
-                }
-
-                animation: rotateAnimation .5s linear forwards;
-            }
-        }
-
-        &:active {
-            svg {
-                color: var(--secAccent);
-                animation: rotateAnimation .5s linear forwards;
-            }
-        }
-
-        &:not(:hover) {
-            svg {
-                animation: returnAnimation .5s linear forwards;
-
-                path {
-                    stroke-dashoffset: 0;
-                }
-            }
-        }
-    }
-
     .settingsContainer {
-        position: absolute;
+        position: fixed;
         display: flex;
         flex-direction: column;
         gap: 1rem;
 
+        border-top-left-radius: 1.5rem;
         border-bottom-left-radius: 1.5rem;
-        border-bottom-right-radius: 1.5rem;
-        box-shadow: var(--paleAccent) 0 var(--shadowValue) 0, var(--shadowColorThree) 0 0 .65rem;
+        box-shadow: var(--paleAccent) -.1rem 0 var(--shadowValue) 0, var(--shadowColorThree) 0 0 .65rem;
 
-        top: 0;
-        right: -60%;
+        top: 13rem;
+        right: 0rem;
         transition: transform .5s;
 
         padding-block: 0.5rem 1.5rem;
         padding-inline: 1.5rem;
-        transform: translateY(-30rem);
+        transform: translateX(130%);
 
         background-color: var(--tpPri);
 
@@ -262,11 +216,11 @@ header {
 
     .settingsContainer-enter-active,
     .settingsContainer-exiting {
-        transform: translateY(-30rem);
+        transform: translateX(130%);
     }
 
     .settingsContainer-enter-done {
-        transform: translateY(0);
+        transform: translate(0);
     }
 }
 

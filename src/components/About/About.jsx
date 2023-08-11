@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function About() {
     return (
-        <div>About</div>
+        <main className='mainComponent contactMain'>Contact</main>
     )
 }
 

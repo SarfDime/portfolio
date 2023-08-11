@@ -2,11 +2,20 @@ body {
     &.performance {
         #root {
             header {
-                backdrop-filter: blur(0) !important;
-
                 .settingsContainer {
                     backdrop-filter: blur(0) !important;
                     background-color: var(--extraPrimary);
+                }
+
+                nav {
+                    .nav-buttons {
+                        backdrop-filter: blur(0) !important;
+                        background-color: var(--extraPrimary);
+                    }
+                    .toggleNavButton {
+                        backdrop-filter: blur(0) !important;
+                        background-color: var(--extraPrimary);
+                    }
                 }
             }
 
@@ -43,11 +52,11 @@ body {
         &.performance {
             #root {
                 header {
-                    backdrop-filter: blur(0) !important;
-
                     nav {
-                        backdrop-filter: none !important;
-                        background-color: var(--extraPrimary);
+                        &.nav-active {
+                            backdrop-filter: blur(0) !important;
+                            background-color: var(--extraPrimary);
+                        }
                     }
 
                     #headerLogo,

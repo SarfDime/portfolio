@@ -1,20 +1,12 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
 import Nav from './Nav/Nav'
 import Preferences from './Preferences/Preferences'
-import { toggleSettings } from '../../store/settingsSlice'
+import Hero from '../Hero/Hero'
 export default function Header() {
-
-    const dispatch = useDispatch()
-    const handleToggleSettings = () => {
-        dispatch(toggleSettings())
-    }
-
-    const githubURL = 'https://github.com/SarfDime/portfolio'
     
     return (
         <header>
-            <a id='headerLogo' href={githubURL} target="_blank" rel="noopener noreferrer">
+            <a id='headerLogo' href="https://github.com/SarfDime/portfolio" target="_blank" rel="noopener noreferrer">
                 <svg viewBox="0 0 24 24">
                     <g fill="none" fillRule="evenodd">
                         <path d="M24 0v24H0V0h24ZM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018Zm.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022Zm-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01l-.184-.092Z" />
@@ -22,16 +14,9 @@ export default function Header() {
                     </g>
                 </svg>
             </a>
+            <Hero />
             <Nav />
             <Preferences />
-            <button id='settingsButton' onClick={handleToggleSettings}>
-                <svg width="32" height="32" viewBox="0 0 24 24">
-                    <g fill="none" stroke="currentColor" strokeWidth="1.5">
-                        <circle cx="12" cy="12" r="3" />
-                        <path strokeLinecap="round" d="M3.661 10.64c.473.296.777.802.777 1.36s-.304 1.064-.777 1.36c-.321.203-.529.364-.676.556a2 2 0 0 0-.396 1.479c.052.394.285.798.75 1.605c.467.807.7 1.21 1.015 1.453a2 2 0 0 0 1.479.396c.24-.032.483-.13.819-.308a1.617 1.617 0 0 1 1.567.008c.483.28.77.795.79 1.353c.014.38.05.64.143.863a2 2 0 0 0 1.083 1.083C10.602 22 11.068 22 12 22c.932 0 1.398 0 1.765-.152a2 2 0 0 0 1.083-1.083c.092-.223.129-.483.143-.863c.02-.558.307-1.074.79-1.353a1.617 1.617 0 0 1 1.567-.008c.336.178.58.276.82.308a2 2 0 0 0 1.478-.396c.315-.242.548-.646 1.014-1.453c.208-.36.369-.639.489-.873m-.81-2.766a1.617 1.617 0 0 1-.777-1.36c0-.559.304-1.065.777-1.362c.321-.202.528-.363.676-.555a2 2 0 0 0 .396-1.479c-.052-.394-.285-.798-.75-1.605c-.467-.807-.7-1.21-1.015-1.453a2 2 0 0 0-1.479-.396c-.24.032-.483.13-.82.308a1.617 1.617 0 0 1-1.566-.008a1.617 1.617 0 0 1-.79-1.353c-.014-.38-.05-.64-.143-.863a2 2 0 0 0-1.083-1.083C13.398 2 12.932 2 12 2c-.932 0-1.398 0-1.765.152a2 2 0 0 0-1.083 1.083c-.092.223-.129.483-.143.863a1.617 1.617 0 0 1-.79 1.353a1.617 1.617 0 0 1-1.567.008c-.336-.178-.58-.276-.82-.308a2 2 0 0 0-1.478.396C4.04 5.79 3.806 6.193 3.34 7c-.208.36-.369.639-.489.873" />
-                    </g>
-                </svg>
-            </button>
         </header>
     )
 }

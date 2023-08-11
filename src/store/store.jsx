@@ -2,13 +2,13 @@ import { configureStore } from '@reduxjs/toolkit'
 import themeReducer from './themeSlice.js'
 import performanceReducer from './performanceSlice.js'
 import settingsReducer from './settingsSlice.js'
-import pathReducer from './pathSlice';
+import intersectionReducer from './intersectionSlice';
 
 const store = configureStore({
     reducer: {
         performance: performanceReducer,
         theme: themeReducer,
-        path: pathReducer,
+        intersection: intersectionReducer,
         settingsVisibility: settingsReducer,
     },
 });

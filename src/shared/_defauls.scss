@@ -23,11 +23,10 @@ body {
     &.dark-mode {
         #root {
             header {
-                backdrop-filter: blur(.5rem);
 
                 nav {
                     button {
-
+                        backdrop-filter: blur(.3rem);
                         &::before,
                         &::after {
                             opacity: .6;
@@ -79,8 +78,11 @@ body {
     &.light-mode {
         #root {
             header {
-                backdrop-filter: blur(.5rem);
-
+                nav {
+                    button {
+                        backdrop-filter: blur(.3rem);
+                    }
+                }
                 .settingsContainer {
                     backdrop-filter: blur(.5rem);
                 }
@@ -120,15 +122,12 @@ body {
         &.dark-mode {
             #root {
                 header {
-                    backdrop-filter: none !important;
-
-                    nav {
-                        backdrop-filter: blur(.5rem);
-                    }
-
-                    #headerLogo,
-                    #settingsButton {
-                        backdrop-filter: blur(.5rem);
+                    nav{
+                        &.nav-active {
+                            box-shadow: var(--accent) -.1rem .1rem var(--shadowValue);
+                            background-color: var(--tpPri);
+                            backdrop-filter: blur(.2rem);
+                        }
                     }
                 }
             }
@@ -137,15 +136,12 @@ body {
         &.light-mode {
             #root {
                 header {
-                    backdrop-filter: none !important;
-
-                    nav {
-                        backdrop-filter: none !important;
-                    }
-
-                    #headerLogo,
-                    #settingsButton {
-                        backdrop-filter: blur(.5rem);
+                    nav{
+                        &.nav-active {
+                            box-shadow: var(--accent) -.1rem .1rem var(--shadowValue);
+                            background-color: var(--tpPri);
+                            backdrop-filter: blur(.2rem);
+                        }
                     }
                 }
             }
