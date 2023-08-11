@@ -1,8 +1,7 @@
 header {
     position: relative;
-    // display: flex;
     width: 100vw;
-    // height: 50vh;
+    width: 100svw;
     box-shadow: var(--paleAccent) .0 var(--shadowValue) 0, var(--shadowColorThree) 0 0 .3rem;
 
     z-index: 5;
@@ -69,8 +68,8 @@ header {
         left: .7rem;
         width: 3.5rem;
         height: 3.5rem;
-        color: var(--secAccent);
-        border: .2rem solid var(--secAccent);
+        color: var(--accent);
+        border: .2rem solid var(--accent);
         border-radius: 50%;
         padding: .4rem;
         margin-right: .3rem;

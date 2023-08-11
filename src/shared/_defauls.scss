@@ -23,10 +23,11 @@ body {
     &.dark-mode {
         #root {
             header {
-
                 nav {
                     button {
                         backdrop-filter: blur(.3rem);
+                        background-color: var(--tpPri);
+
                         &::before,
                         &::after {
                             opacity: .6;
@@ -37,8 +38,18 @@ body {
                 .settingsContainer {
                     backdrop-filter: blur(.5rem);
                 }
-            }
 
+                .heroMain {
+                    .intro {
+                        .introLogo {
+                            &::before {
+                                backdrop-filter: blur(.5rem);
+                            }
+                        }
+                    }
+                }
+            }
+            
             .projectsMain {
                 .angry-grid {
                     .projectItem {
@@ -81,10 +92,45 @@ body {
                 nav {
                     button {
                         backdrop-filter: blur(.3rem);
+                        background-color: var(--tpPri);
                     }
                 }
+
                 .settingsContainer {
                     backdrop-filter: blur(.5rem);
+                }
+
+                .heroMain {
+                    .intro {
+                        background: radial-gradient(circle at right bottom, transparent 0%, rgba(0, 0, 0, 0), var(--tpPri) 50%);
+
+                        .introLogo {
+                            &::before {
+                                backdrop-filter: blur(.3rem);
+                            }
+
+                            svg {
+                                path {
+                                    &:nth-child(1) {
+                                        fill: rgb(243, 82, 42);
+                                    }
+
+                                    &:nth-child(2) {
+                                        fill: var(--tertAccent);
+                                    }
+
+                                    &:nth-child(3) {
+                                        fill: rgb(189, 243, 42);
+                                    }
+
+                                    &:last-child {
+                                        fill: var(--accent);
+                                    }
+                                }
+                            }
+                        }
+                    }
+
                 }
             }
 
@@ -122,7 +168,7 @@ body {
         &.dark-mode {
             #root {
                 header {
-                    nav{
+                    nav {
                         &.nav-active {
                             box-shadow: var(--accent) -.1rem .1rem var(--shadowValue);
                             background-color: var(--tpPri);
@@ -136,7 +182,7 @@ body {
         &.light-mode {
             #root {
                 header {
-                    nav{
+                    nav {
                         &.nav-active {
                             box-shadow: var(--accent) -.1rem .1rem var(--shadowValue);
                             background-color: var(--tpPri);
@@ -154,7 +200,6 @@ img {
 }
 
 a,
-span,
 button {
     cursor: pointer;
 }

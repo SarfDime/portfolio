@@ -9,7 +9,7 @@ export default function Nav() {
   const dispatch = useDispatch()
   const currentElement = useSelector((state) => state.intersection.currentElement) || ''
   const activeButton = currentElement
-
+  const settingsActive = useSelector((state) => state.settingsVisibility)
   useEffect(() => {
     const sectionElements = document.querySelectorAll('.mainComponent')
     const options = {
@@ -38,6 +38,11 @@ export default function Nav() {
   }, [dispatch])
 
   const handleToggleNav = () => {
+    if(isNavActive) {
+      if(settingsActive){
+        dispatch(toggleSettings())
+      }
+    }
     setIsNavActive(!isNavActive)
   }
 

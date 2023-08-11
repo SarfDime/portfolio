@@ -1,8 +1,40 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
+
 export default function Projects() {
+    const angryGridRef = useRef(null)
+
+    useEffect(() => {
+        const options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: [0.1, 0.3, 0.9],
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.intersectionRatio >= 0.1) {
+                    entry.target.querySelector('.item-1').classList.add('item-visible')
+                }  if (entry.intersectionRatio >= 0.3) {
+                    entry.target.querySelector('.item-0').classList.add('item-visible')
+                    entry.target.querySelector('.item-2').classList.add('item-visible')
+                    entry.target.querySelector('.item-5').classList.add('item-visible')
+                }  if (entry.intersectionRatio >= 0.9) {
+                    entry.target.querySelectorAll('.projectItem').forEach(item => {
+                        item.classList.add('item-visible')
+                    })
+                }
+            })
+        }, options)
+
+        observer.observe(angryGridRef.current)
+
+        return () => {
+            observer.disconnect()
+        }
+    }, [])
     return (
         <main className='mainComponent projectsMain' >
-            <div className="angry-grid">
+            <div className="angry-grid" ref={angryGridRef}>
                 <div className='projectItem item-0'>
                     <div className='casTitle'>
                         <h1>click</h1>
