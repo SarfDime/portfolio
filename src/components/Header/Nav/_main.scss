@@ -39,7 +39,7 @@ header {
 
             outline: .1rem solid rgba(0, 0, 0, 0);
 
-            transform: translateX(130%);
+            transform: translateX(150%);
 
             display: flex;
             align-items: center;
@@ -197,24 +197,23 @@ header {
             }
 
             &:active {
-                color: var(--secColor);
-
-                &::before,
-                &::after {
-                    background-color: var(--tertAccent);
-                    transition: background-color 0.2s cubic-bezier(0, 0.5, 0.5, 1);
-                }
+                // &::before,
+                // &::after {
+                //     background-color: var(--tertAccent);
+                //     transition: background-color 0.2s cubic-bezier(0, 0.5, 0.5, 1);
+                // }
             }
 
             &.active {
                 color: var(--accent);
-                pointer-events: none;
+                pointer-events: none!important;
                 transition: transform 300ms ease;
 
                 box-shadow: var(--accent) 0 var(--shadowValue) .15rem .1rem;
 
                 &::before,
                 &::after {
+                    scale: 0;
                     background-color: var(--tertAccent);
                 }
             }

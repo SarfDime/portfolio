@@ -1,9 +1,10 @@
 .projectsMain {
-    height: 85vh;
-    width: 90vw;
+    height: 100vh;
+    width: 100vw;
     padding: 3%;
     margin-inline: auto;
     overflow: hidden;
+    margin-block: 5rem;
 
     .angry-grid {
         display: grid;
@@ -23,7 +24,9 @@
 
             overflow: hidden;
 
-            box-shadow: var(--paleAccent) -.1rem -.1rem var(--shadowValue) 0, var(--shadowColorThree) 0 0 .2rem;
+            box-shadow: var(--paleAccent) -.1rem -.1rem var(--shadowValue) 0, var(--shadowColorThree) 0 0 .2rem, var(--paleAccent) -.1rem -.1rem var(--shadowValue) 0,
+                var(--shadowColorThree) 0 0 .2rem, var(--paleAccent) .0rem .0rem .3rem 0,
+                var(--shadowColorThree) 0 0 .2rem;
 
             .casTitle {
                 position: relative;
@@ -174,7 +177,8 @@
             background:
                 linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), var(--tpPri)),
                 radial-gradient(circle at top center, transparent 35%, rgba(0, 0, 0, 0), var(--tpPri) 70%);
-            box-shadow: var(--paleTertAccent) .1rem .1rem var(--shadowValue) 0, var(--shadowColorThree) 0 0 .3rem;
+            box-shadow: var(--paleTertAccent) .1rem .1rem var(--shadowValue) 0, var(--paleTertAccent) .1rem .1rem var(--shadowValue) 0,
+                var(--shadowColorThree) 0 0 .3rem,var(--paleTertAccent) -.0rem -.0rem .3rem 0;
 
             display: flex;
             flex-direction: column;
@@ -201,7 +205,7 @@
                     align-items: center;
 
                     color: var(--tertAccent);
-                    text-shadow: .1rem .15rem 0 var(--secAccent);
+                    text-shadow: .1rem .15rem 0 var(--additionalAccent);
 
                     font-size: 2.2rem;
                     line-height: 2.8rem;
@@ -231,7 +235,7 @@
             bottom: 2rem;
             right: 1rem;
 
-            box-shadow: var(--paleSecAccent) -.1rem .05rem var(--shadowValue) 0, var(--shadowColorThree) 0 0 .3rem;
+            box-shadow: var(--paleSecAccent) -.1rem .05rem var(--shadowValue) 0, var(--shadowColorThree) 0 0 .3rem,var(--paleSecAccent) 0 -0 .3rem 0;
 
             overflow: hidden;
             display: flex;
@@ -395,7 +399,7 @@
             background:
                 linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), var(--tpPri)),
                 radial-gradient(circle at top center, transparent 35%, rgba(0, 0, 0, 0), var(--tpPri) 70%);
-            box-shadow: var(--paleAccent) .1rem .05rem var(--shadowValue) 0, var(--shadowColorThree) 0 0 .3rem;
+            box-shadow: var(--paleAccent) .1rem .05rem var(--shadowValue) 0, var(--shadowColorThree) 0 0 .3rem,var(--paleAccent) 0 0 .3rem 0;
 
             h2 {
                 color: var(--accent);
@@ -476,7 +480,7 @@
             left: 1rem;
             margin-right: 2rem;
 
-            box-shadow: var(--paleTertAccent) .1rem .05rem var(--shadowValue) 0, var(--shadowColorThree) 0 0 .3rem;
+            box-shadow: var(--paleTertAccent) .1rem .05rem var(--shadowValue) 0, var(--shadowColorThree) 0 0 .3rem,var(--paleTertAccent) 0 0 .3rem 0;
 
             overflow: hidden;
             display: flex;
@@ -492,7 +496,7 @@
 
                 h2 {
                     color: var(--tertAccent);
-                    text-shadow: .1rem .1rem 0 var(--secAccent);
+                    text-shadow: .1rem .1rem 0 var(--additionalAccent);
 
                     font-size: 2.2rem;
                     font-weight: 600;
@@ -629,7 +633,7 @@
             background:
                 linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), var(--tpPri)),
                 radial-gradient(circle at left top, transparent 35%, rgba(0, 0, 0, 0), var(--tpPri) 70%);
-            box-shadow: var(--paleSecAccent) .1rem -.05rem var(--shadowValue) 0, var(--shadowColorThree) 0 0 .3rem;
+            box-shadow: var(--paleSecAccent) .1rem -.05rem var(--shadowValue) 0, var(--shadowColorThree) 0 0 .3rem,var(--paleSecAccent) 0 0 .2rem 0;
 
             overflow: hidden;
 
@@ -740,18 +744,23 @@
         .item-0 {
             transform: translateY(130vh);
         }
+
         .item-1 {
             transform: translateX(100vw);
         }
+
         .item-2 {
             transform: translateY(-130vh);
         }
+
         .item-3 {
             transform: translateX(-100vw);
         }
+
         .item-4 {
             transform: translateX(100vw);
         }
+
         .item-5 {
             transform: translateY(-130vh);
         }
@@ -760,115 +769,21 @@
     .angry-grid {
         .item-visible {
             transform: translate(0);
-            transition: transform .4s cubic-bezier(0.19, .9, 0.22, 1);
+            transition: transform 1s cubic-bezier(0.19, 0.9, 0.22, 1);
         }
 
-        .item-1 {
-            transition: transform .8s cubic-bezier(0.19, .9, 0.22, 1);
-        }
-
-        .item-2 {
-            transition: transform .8s cubic-bezier(0.19, .9, 0.22, 1);
-        }
-
+        .item-1,
+        .item-2,
         .item-3 {
-            transition: transform .8s cubic-bezier(0.19, .9, 0.22, 1);
+            transition: transform 1s cubic-bezier(0.19, 0.9, 0.22, 1);
         }
 
         .item-4 {
-            transition: transform 1s cubic-bezier(0.19, .9, 0.22, 1);
+            transition: transform 1.5s cubic-bezier(0.19, 0.9, 0.22, 1);
         }
 
         .item-5 {
-            transition: transform .4s cubic-bezier(0.19, .8, 0.22, 1);
-        }
-    }
-}
-
-.projectsMain-enter-active {
-    opacity: 0;
-    .angry-grid {
-        .item-0 {
-            transform: translateY(130vh);
-        }
-        .item-1 {
-            transform: translateX(100vw);
-        }
-        .item-2 {
-            transform: translateY(-130vh);
-        }
-        .item-3 {
-            transform: translateX(-100vw);
-        }
-        .item-4 {
-            transform: translateX(100vw);
-        }
-        .item-5 {
-            transform: translateY(-130vh);
-        }
-    }
-}
-
-.projectsMain-exit-active {
-    opacity: 0;
-    transition: opacity 750ms ease;
-
-    .angry-grid {
-        .item-0 {
-            transform: translateY(130vh);
-            transition: transform .6s cubic-bezier(0.19, 0, 0.22, .9);
-        }
-        .item-1 {
-            transform: translateX(100vw);
-            transition: transform .3s cubic-bezier(0.19, 0, 0.22, .8);
-        }
-        .item-2 {
-            transform: translateY(-130vh);
-            transition: transform .7s cubic-bezier(0.19, 0, 0.22, .8);
-        }
-        .item-3 {
-            transform: translateX(-100vw);
-            transition: transform .3s cubic-bezier(0.19, 0, 0.22, .8);
-        }
-        .item-4 {
-            transform: translateX(100vw);
-            transition: transform .7s cubic-bezier(0.19, 0, 0.22, .8);
-        }
-        .item-5 {
-            transform: translateY(-130vh);
-            transition: transform 1s cubic-bezier(0.19, 0, 0.22, .8);
-        }
-    }
-}
-
-.projectsMain-enter-done {
-    opacity: 1;
-    transition: opacity 150ms ease;
-
-    .angry-grid {
-        .projectItem {
-            transform: translate(0);
-            transition: transform .4s cubic-bezier(0.19, .9, 0.22, 1);
-        }
-
-        .item-1 {
-            transition: transform .8s cubic-bezier(0.19, .9, 0.22, 1);
-        }
-
-        .item-2 {
-            transition: transform .8s cubic-bezier(0.19, .9, 0.22, 1);
-        }
-
-        .item-3 {
-            transition: transform .8s cubic-bezier(0.19, .9, 0.22, 1);
-        }
-
-        .item-4 {
-            transition: transform 1s cubic-bezier(0.19, .9, 0.22, 1);
-        }
-
-        .item-5 {
-            transition: transform .4s cubic-bezier(0.19, .8, 0.22, 1);
+            transition: transform 1s cubic-bezier(0.19, 0.8, 0.22, 1);
         }
     }
 }
@@ -1003,51 +918,6 @@
 }
 
 @media (max-width: 1150px) {
-    .projectsMain-enter-active {
-        .angry-grid {
-            .item-0 {
-                transform: translateX(130vw);
-            }
-            .item-1 {
-                transform: translateX(-100vw);
-            }
-            .item-2 {
-                transform: translateX(-130vw);
-            }
-            .item-3 {
-                transform: translateX(100vw);
-            }
-            .item-4 {
-                transform: translateX(-100vw);
-            }
-            .item-5 {
-                transform: translateX(130vw);
-            }
-        }
-    }
-    
-    .projectsMain-exit-active {
-        .angry-grid {
-            .item-0 {
-                transform: translateX(130vw);
-            }
-            .item-1 {
-                transform: translateX(-100vw);
-            }
-            .item-2 {
-                transform: translateX(-130vw);
-            }
-            .item-3 {
-                transform: translateX(100vw);
-            }
-            .item-4 {
-                transform: translateX(100vw);
-            }
-            .item-5 {
-                transform: translateX(-130vw);
-            }
-        }
-    }
     .projectsMain {
         height: unset;
         width: 70vw;
@@ -1055,6 +925,7 @@
         margin-inline: auto;
         margin-top: 1rem;
         overflow: hidden;
+
         .angry-grid {
             display: flex;
             flex-wrap: wrap;
@@ -1118,7 +989,32 @@
         margin-inline: auto;
         margin-top: 1rem;
         overflow: hidden;
-        
+
+        .angry-grid {
+            .item-0 {
+                transform: translate(0) !important;
+            }
+
+            .item-1 {
+                transform: translate(0) !important;
+            }
+
+            .item-2 {
+                transform: translate(0) !important;
+            }
+
+            .item-3 {
+                transform: translate(0) !important;
+            }
+
+            .item-4 {
+                transform: translate(0) !important;
+            }
+
+            .item-5 {
+                transform: translate(0) !important;
+            }
+        }
     }
 }
 

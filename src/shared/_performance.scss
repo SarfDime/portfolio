@@ -19,35 +19,40 @@ body {
                     }
                 }
 
-                .heroMain {
-                    .intro {
-                        .introLogo {
-                            &::before {
-                                backdrop-filter: blur(0) !important;
-                            }
+                .intro {
+                    .introLogo {
+                        &::before {
+                            backdrop-filter: blur(0) !important;
+                        }
 
-                            svg {
-                                path {
-                                    &:nth-child(1) {
-                                        translate: 0% -0.5%;
-                                    }
+                        svg {
+                            path {
+                                &:nth-child(1) {
+                                    translate: 0% -0.5%;
+                                }
 
-                                    &:nth-child(2) {
-                                        translate: 2% -3.5%;
-                                    }
+                                &:nth-child(2) {
+                                    translate: 2% -3.5%;
+                                }
 
-                                    &:nth-child(3) {
-                                        translate: 4% -7.5%;
-                                    }
+                                &:nth-child(3) {
+                                    translate: 4% -7.5%;
+                                }
 
-                                    &:last-child {
-                                        translate: 6% -10.5%;
-                                    }
+                                &:last-child {
+                                    translate: 6% -10.5%;
                                 }
                             }
                         }
                     }
 
+                    .about {
+                        .aboutInfo {
+                            div {
+                                backdrop-filter: blur(0) !important;
+                            }
+                        }
+                    }
                 }
             }
 

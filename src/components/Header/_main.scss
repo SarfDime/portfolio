@@ -2,7 +2,7 @@ header {
     position: relative;
     width: 100vw;
     width: 100svw;
-    box-shadow: var(--paleAccent) .0 var(--shadowValue) 0, var(--shadowColorThree) 0 0 .3rem;
+    // box-shadow: var(--paleAccent) .0 var(--shadowValue) 0, var(--shadowColorThree) 0 0 .3rem;
 
     z-index: 5;
 
@@ -103,11 +103,6 @@ header {
 
 @media (max-width: 1400px) {
     header {
-        gap: .7rem;
-        padding: .5rem 1.3rem;
-        border-bottom-left-radius: 2.5rem;
-        border-bottom-right-radius: 2.5rem;
-
         #headerLogo {
             top: .5rem;
             left: .5rem;

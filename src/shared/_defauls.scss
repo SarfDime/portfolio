@@ -20,7 +20,27 @@ body {
     min-height: 100vh;
     min-height: 100svh;
 
+    max-width: 2400px;
+    align-self: center;
+    margin-inline: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar {
+        width: .5rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--accent);
+        border-radius: 25rem;
+    }
+
     &.dark-mode {
+        &::-webkit-scrollbar-track {
+            background: radial-gradient(circle at center, #1b2735 0%, #090a0f 100%);
+            background-repeat: no-repeat;
+        }
+
         #root {
             header {
                 nav {
@@ -39,17 +59,44 @@ body {
                     backdrop-filter: blur(.5rem);
                 }
 
-                .heroMain {
-                    .intro {
-                        .introLogo {
-                            &::before {
-                                backdrop-filter: blur(.5rem);
+
+                .intro {
+                    .introLogo {
+                        &::before {
+                            backdrop-filter: blur(.5rem);
+                        }
+                    }
+                }
+
+                .about {
+                    .aboutInfo {
+                        div {
+                            backdrop-filter: blur(.5rem);
+                        }
+                    }
+
+                    .skills {
+                        .skillsGrid {
+                            div {
+                                &:nth-child(7) {
+                                    svg {
+                                        path {
+                                            fill: var(--priColor);
+                                        }
+                                    }
+                                }
+
+                                &:nth-child(5) {
+                                    svg {
+                                        color: rgb(178, 178, 178);
+                                    }
+                                }
                             }
                         }
                     }
                 }
             }
-            
+
             .projectsMain {
                 .angry-grid {
                     .projectItem {
@@ -87,6 +134,10 @@ body {
     }
 
     &.light-mode {
+        &::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
         #root {
             header {
                 nav {
@@ -100,44 +151,65 @@ body {
                     backdrop-filter: blur(.5rem);
                 }
 
-                .heroMain {
-                    .intro {
-                        background: radial-gradient(circle at right bottom, transparent 0%, rgba(0, 0, 0, 0), var(--tpPri) 50%);
+                .intro {
+                    background: radial-gradient(circle at right bottom, transparent 0%, rgba(0, 0, 0, 0), var(--tpPri) 50%);
 
-                        .introLogo {
-                            &::before {
-                                backdrop-filter: blur(.3rem);
+                    .introLogo {
+                        &::before {
+                            backdrop-filter: blur(.3rem);
+                        }
+
+                        svg {
+                            path {
+                                &:nth-child(1) {
+                                    fill: rgb(243, 82, 42);
+                                }
+
+                                &:nth-child(2) {
+                                    fill: var(--tertAccent);
+                                }
+
+                                &:nth-child(3) {
+                                    fill: rgb(189, 243, 42);
+                                }
+
+                                &:last-child {
+                                    fill: var(--accent);
+                                }
                             }
+                        }
+                    }
+                }
 
-                            svg {
-                                path {
-                                    &:nth-child(1) {
-                                        fill: rgb(243, 82, 42);
-                                    }
+                .about {
+                    background: radial-gradient(circle at top center, transparent 0%, rgba(0, 0, 0, 0), var(--tpPri) 70%);
 
-                                    &:nth-child(2) {
-                                        fill: var(--tertAccent);
-                                    }
+                    .aboutInfo {
+                        div {
+                            backdrop-filter: blur(.5rem);
+                        }
+                    }
 
-                                    &:nth-child(3) {
-                                        fill: rgb(189, 243, 42);
-                                    }
-
-                                    &:last-child {
-                                        fill: var(--accent);
+                    .skills {
+                        .skillsGrid {
+                            div {
+                                &:nth-child(5) {
+                                    svg {
+                                        color: rgb(100, 100, 100);
                                     }
                                 }
                             }
                         }
                     }
-
                 }
             }
 
             .projectsMain {
+                background: radial-gradient(circle at bottom center, transparent 0%, rgba(0, 0, 0, 0), var(--tpPri) 70%);
+
                 .angry-grid {
                     .projectItem {
-                        backdrop-filter: blur(.5rem);
+                        backdrop-filter: blur(1rem);
 
                         &.item-2 {
                             .weatherLogo {

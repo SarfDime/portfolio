@@ -1,41 +1,47 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useEffect, useRef } from "react";
+import { useSelector } from "react-redux";
 
 export default function Projects() {
     const angryGridRef = useRef(null)
+    const performanceMode = useSelector(
+        (state) => state.performance.performanceMode
+    )
 
     useEffect(() => {
-        const options = {
-            root: null,
-            rootMargin: '0px',
-            threshold: [0.1, 0.3, 0.9],
+        if (!performanceMode) {
+            const options = {
+                root: null,
+                rootMargin: '0px',
+                threshold: [0.1, 0.3, 0.9],
+            }
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.intersectionRatio >= 0.1) {
+                        entry.target.querySelector('.item-1').classList.add('item-visible')
+                    } if (entry.intersectionRatio >= 0.3) {
+                        entry.target.querySelector('.item-0').classList.add('item-visible')
+                        entry.target.querySelector('.item-2').classList.add('item-visible')
+                        entry.target.querySelector('.item-5').classList.add('item-visible')
+                    } if (entry.intersectionRatio >= 0.9) {
+                        entry.target.querySelectorAll('.projectItem').forEach(item => {
+                            item.classList.add('item-visible')
+                        })
+                    }
+                })
+            }, options)
+
+            observer.observe(angryGridRef.current)
+
+            return () => {
+                observer.disconnect()
+            }
         }
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.intersectionRatio >= 0.1) {
-                    entry.target.querySelector('.item-1').classList.add('item-visible')
-                }  if (entry.intersectionRatio >= 0.3) {
-                    entry.target.querySelector('.item-0').classList.add('item-visible')
-                    entry.target.querySelector('.item-2').classList.add('item-visible')
-                    entry.target.querySelector('.item-5').classList.add('item-visible')
-                }  if (entry.intersectionRatio >= 0.9) {
-                    entry.target.querySelectorAll('.projectItem').forEach(item => {
-                        item.classList.add('item-visible')
-                    })
-                }
-            })
-        }, options)
-
-        observer.observe(angryGridRef.current)
-
-        return () => {
-            observer.disconnect()
-        }
-    }, [])
+    }, [performanceMode])
     return (
         <main className='mainComponent projectsMain' >
             <div className="angry-grid" ref={angryGridRef}>
-                <div className='projectItem item-0'>
+                <div className={`projectItem item-0 ${performanceMode ? 'item-visible' : ''}`}>
                     <div className='casTitle'>
                         <h1>click</h1>
                         <h1>&</h1>
@@ -87,7 +93,7 @@ export default function Projects() {
                         </a>
                     </div>
                 </div>
-                <div className='projectItem item-1'>
+                <div className={`projectItem item-1 ${performanceMode ? 'item-visible' : ''}`}>
                     <div>
                         <a href="https://sarfdime.github.io/Movies/" target="_blank" rel="noopener noreferrer">
                             <h3>movies</h3>
@@ -101,7 +107,7 @@ export default function Projects() {
                     </div>
                     <p>some of my smaller projects</p>
                 </div>
-                <div className='projectItem item-2'>
+                <div className={`projectItem item-2 ${performanceMode ? 'item-visible' : ''}`}>
                     <h1 className='weatherTitle'>weather</h1>
 
                     <p className='weatherSubTitle'>built with open-meteo Api</p>
@@ -148,7 +154,7 @@ export default function Projects() {
 
 
                 </div>
-                <div className='projectItem item-3'>
+                <div className={`projectItem item-3 ${performanceMode ? 'item-visible' : ''}`}>
                     <h2>online shop rest api in nest<span>.</span><span>js</span> with postre<span>sql</span></h2>
                     <div>
                         <a href="https://github.com/SarfDime/AdvancedNodeHomeworks/tree/main/nestjs/myPrismaApp" target="_blank" rel="noopener noreferrer">
@@ -162,7 +168,7 @@ export default function Projects() {
                         </a>
                     </div>
                 </div>
-                <div className='projectItem item-4'>
+                <div className={`projectItem item-4 ${performanceMode ? 'item-visible' : ''}`}>
                     <svg className='sscLogo' viewBox="0 0 24 24">
                         <g fill="url(#linearSscLogo)" stroke="currentColor">
                             <path strokeWidth="1.5" d="M10.08 7.897C11.157 5.966 11.695 5 12.5 5c.805 0 1.343.966 2.42 2.897l.278.5c.306.549.46.823.698 1.004c.238.181.535.248 1.13.383l.54.122c2.091.473 3.137.71 3.385 1.51c.249.8-.464 1.633-1.89 3.3l-.368.43c-.405.474-.607.711-.699 1.004c-.09.293-.06.609.001 1.24l.056.576c.216 2.224.323 3.336-.328 3.83c-.651.495-1.63.044-3.587-.857l-.507-.234c-.556-.256-.834-.384-1.129-.384c-.295 0-.573.128-1.13.384l-.506.234c-1.957.9-2.936 1.352-3.587.857c-.651-.494-.543-1.606-.328-3.83l.056-.575c.061-.632.092-.948 0-1.24c-.09-.294-.293-.53-.698-1.004l-.369-.432c-1.425-1.666-2.138-2.5-1.89-3.3c.25-.8 1.295-1.036 3.386-1.509l.54-.122c.595-.135.892-.202 1.13-.383c.239-.18.392-.455.698-1.004l.278-.5Z" />
@@ -198,7 +204,7 @@ export default function Projects() {
                     <div className='sscGradient'>
                     </div>
                 </div>
-                <div className='projectItem item-5'>
+                <div className={`projectItem item-5 ${performanceMode ? 'item-visible' : ''}`}>
                     <h2>my other codepens</h2>
                     <div>
                         <a href="https://codepen.io/SarfDime/pen/GRwPYZo" target="_blank" rel="noopener noreferrer">cool hover effect</a>
