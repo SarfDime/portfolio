@@ -1,10 +1,2 @@
 @use 'shared';
 @use 'components';
-
-.mainComponent {
-    min-height: 70vh;
-    &.contactMain{
-        margin-top: 5%;
-        background-color: blue;
-    }
-}

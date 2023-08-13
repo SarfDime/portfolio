@@ -5,7 +5,7 @@ export default function AboutInfo() {
     const performanceMode = useSelector(
         (state) => state.performance.performanceMode
     )
-    
+
     useEffect(() => {
         if (!performanceMode) {
             const options = {
@@ -41,21 +41,20 @@ export default function AboutInfo() {
 
     return (
         <section className="aboutInfo">
+            <p className='aboutTitle'>About Me</p>
             <div className={!performanceMode ? 'invisible' : ''}>
                 <h1>My Journey</h1>
                 <p>
                     Hey there! I'm <span>Dime</span>, a dedicated web developer
                     enthusiastic about crafting digital experiences that merge
-                    creativity with functionality. I'm on a journey to learn, grow,
+                    creativity with functionality. I'm on a <span>journey</span> to learn, grow,
                     and contribute to the ever-changing landscape of web development.
                 </p>
             </div>
             <div className={!performanceMode ? 'invisible' : ''}>
                 <h1>Unveiling Possibilities</h1>
                 <p>
-                    Technology's potential has always fascinated me, leading me to the
-                    realm of web development. The art of turning lines of code into
-                    interactive experiences is where my journey truly begins.
+                    From concept to <span>reality</span>, I thrive on weaving together code and creativity. User-centric <span>design</span>, efficient development, and seamless interaction are the pillars of my approach.
                 </p>
             </div>
             <div className={!performanceMode ? 'invisible' : ''}>
@@ -63,10 +62,10 @@ export default function AboutInfo() {
                 <p>
                     The world of technology has always captivated me, and I find my
                     true calling in web development. The power to transform abstract
-                    ideas into dynamic digital experiences fuels my passion for
+                    ideas into dynamic digital experiences fuels my <span>passion</span> for
                     coding. Through web development, I merge innovation and creativity
-                    to build platforms that connect and engage users on a global
-                    scale.
+                    to build platforms that connect and engage users on a <span>global
+                        scale.</span>
                 </p>
             </div>
         </section>

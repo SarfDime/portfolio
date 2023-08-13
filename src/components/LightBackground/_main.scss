@@ -1,74 +1,76 @@
 @mixin randomShapeAnimations($numShapes) {
-    $rotateLeftCount: ceil($numShapes * 0.3); // 30% of shapes for rotateLeft animation
-    $rotateRightCount: ceil($numShapes * 0.3); // 30% of shapes for rotateRight animation
+  $rotateLeftCount: ceil(
+    $numShapes * 0.3
+  ); // 30% of shapes for rotateLeft animation
+  $rotateRightCount: ceil(
+    $numShapes * 0.3
+  ); // 30% of shapes for rotateRight animation
 
-    @for $i from 1 through $numShapes {
-        $animationName: "";
-        $animationDuration: "";
+  @for $i from 1 through $numShapes {
+    $animationName: "";
+    $animationDuration: "";
 
-        // Randomly assign animation based on percentages
-        @if $i <=$rotateLeftCount {
-            $animationName: rotateLeft;
-            $animationDuration: 800s;
-        }
-
-        @else if $i <=$rotateLeftCount +$rotateRightCount {
-            $animationName: rotateRight;
-            $animationDuration: 800s;
-        }
-
-        .shape-#{$i} {
-            animation: #{$animationName} $animationDuration linear infinite;
-            animation-delay: random() * 30s;
-        }
+    // Randomly assign animation based on percentages
+    @if $i <=$rotateLeftCount {
+      $animationName: rotateLeft;
+      $animationDuration: 800s;
+    } @else if $i <=$rotateLeftCount + $rotateRightCount {
+      $animationName: rotateRight;
+      $animationDuration: 800s;
     }
+
+    .shape-#{$i} {
+      animation: #{$animationName} $animationDuration linear infinite;
+      animation-delay: random() * 30s;
+    }
+  }
 }
 
 .lightBackground {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    fill: transparent;
-    z-index: -3;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  fill: transparent;
+  z-index: -3;
 
-    user-select: none;
-    pointer-events: none;
-    @include randomShapeAnimations(10);
+  user-select: none;
+  pointer-events: none;
+  @include randomShapeAnimations(10);
 
-    @keyframes rotateRight {
-        0% {
-            transform: rotate(0deg);
-        }
-
-        50% {
-            transform: rotate(-360deg);
-        }
-
-        100% {
-            transform: rotate(0deg);
-        }
+  @keyframes rotateRight {
+    0% {
+      transform: rotate(0deg);
     }
 
-    @keyframes rotateLeft {
-        0% {
-            transform: rotate(0deg);
-        }
-
-        50% {
-            transform: rotate(360deg);
-        }
-
-        100% {
-            transform: rotate(0deg);
-        }
+    50% {
+      transform: rotate(-360deg);
     }
+
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+
+  @keyframes rotateLeft {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    50% {
+      transform: rotate(360deg);
+    }
+
+    100% {
+      transform: rotate(0deg);
+    }
+  }
 }
 
 @media (max-width: 768px) {
-    .lightBackground {
-        transform: scale(3);
-    }
+  .lightBackground {
+    transform: scale(3);
+  }
 }

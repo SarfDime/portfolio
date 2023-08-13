@@ -3,7 +3,8 @@ import { useSelector, useDispatch } from "react-redux"
 import { handleMouseEnter, handleMouseLeave } from "./navHelpers"
 import { toggleSettings } from "../../../store/settingsSlice"
 import { setCurrentElement } from "../../../store/intersectionSlice"
-import SmoothScroll from 'smooth-scroll'
+
+import SmoothScroll from 'smooth-scroll' // Had to use this libary because of an scroll issue with chromium based browsers
 
 export default function Nav() {
   const [isNavActive, setIsNavActive] = useState(false)

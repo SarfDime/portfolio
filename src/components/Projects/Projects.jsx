@@ -40,6 +40,7 @@ export default function Projects() {
     }, [performanceMode])
     return (
         <main className='mainComponent projectsMain' >
+            <p className="projectsTitle">selected work</p>
             <div className="angry-grid" ref={angryGridRef}>
                 <div className={`projectItem item-0 ${performanceMode ? 'item-visible' : ''}`}>
                     <div className='casTitle'>

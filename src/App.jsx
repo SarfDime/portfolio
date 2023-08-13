@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import Header from './components/Header/Header'
-import About from './components/About/About'
 import Projects from './components/Projects/Projects'
 
 import SpaceBackground from './components/SpaceBackground/SpaceBackground'
 import LightBackground from './components/LightBackground/LightBackground'
 import './styles.scss'
+import Contact from './components/Contact/Contact'
 
 function App() {
   const performanceMode = useSelector((state) => state.performance.performanceMode)
@@ -25,7 +25,7 @@ function App() {
         <LightBackground numPathsCircles={9} />
         <SpaceBackground numberOfStars={280} />
         <Projects />
-        <About />
+        <Contact />
     </>
   )
 }

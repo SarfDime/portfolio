@@ -3,30 +3,35 @@ import { useSelector } from "react-redux"
 import Skills from "./Skills"
 import AboutInfo from "./AboutInfo"
 
-
 export default function Hero() {
     const logoRef = useRef(null)
-    let paths = []
 
     const performanceMode = useSelector(
         (state) => state.performance.performanceMode
     )
 
+    const currentElement = useSelector(
+        (state) => state.intersection.currentElement
+    )
+
     useEffect(() => {
         if (!performanceMode) {
-            paths = logoRef.current.querySelectorAll("path")
-            let headerElement = document.querySelector('header')
+            const paths = logoRef.current.querySelectorAll("path")
+            const headerElement = document.querySelector("header")
+
             const shift = (image, index, rangeX, rangeY) => {
-                const translationIntensity = 7
+                const translationIntensity = 7.5
                 const maxTranslation = translationIntensity * (index + 1)
-                const currentTranslation = `translate(${maxTranslation * rangeX}px, ${maxTranslation * rangeY
-                    }px)`
+                const currentTranslation = `translate(${maxTranslation * rangeX
+                    }px, ${maxTranslation * rangeY}px)`
 
                 image.style.transform = currentTranslation
             }
 
             const shiftAll = (paths, rangeX, rangeY) =>
-                paths.forEach((image, index) => shift(image, index, rangeX, rangeY))
+                paths.forEach((image, index) =>
+                    shift(image, index, rangeX, rangeY)
+                )
 
             const shiftLogo = (e) => {
                 const rect = logoRef.current.getBoundingClientRect()
@@ -42,18 +47,22 @@ export default function Hero() {
             }
 
             const resetLogoShift = () => {
-                shiftAll(paths, 0, 0) // Reset the logo shift
+                shiftAll(paths, 0, 0) 
             }
 
-            headerElement.addEventListener("mousemove", shiftLogo)
-            headerElement.addEventListener("mouseleave", resetLogoShift) // Attach the resetLogoShift function to mouseout event
+            if (currentElement === "introMain") {
+                headerElement.addEventListener("mousemove", shiftLogo)
+                headerElement.addEventListener("mouseleave", resetLogoShift)
 
-            return () => {
-                headerElement.removeEventListener("mousemove", shiftLogo)
-                headerElement.removeEventListener("mouseleave", resetLogoShift)
+                return () => {
+                    headerElement.removeEventListener("mousemove", shiftLogo)
+                    headerElement.removeEventListener("mouseleave", resetLogoShift)
+                }
+            } else {
+                resetLogoShift()
             }
         }
-    }, [performanceMode])
+    }, [performanceMode, currentElement])
 
     return (
         <>

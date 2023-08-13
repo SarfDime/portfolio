@@ -11,14 +11,12 @@ header {
             height: 55%;
 
             &::before {
-                content: '';
+                content: "";
                 position: absolute;
                 inset: -5%;
                 display: block;
-                box-shadow: 0 0 5vmax var(--accent),
-                    0 0 10vmax var(--accent),
-                    0 0 15vmax var(--paleAccent),
-                    0 0 20vmax var(--paleAccent),
+                box-shadow: 0 0 5vmax var(--accent), 0 0 10vmax var(--accent),
+                    0 0 15vmax var(--paleAccent), 0 0 20vmax var(--paleAccent),
                     0 0 25vmax var(--paleAccent);
                 z-index: -3;
                 border-radius: 50%;
@@ -59,17 +57,22 @@ header {
 
                 h1 {
                     color: var(--accent);
-                    text-shadow: .5rem 0.3rem 0 var(--tertAccent), 1rem 0.5rem 0 var(--secAccent);
+                    text-shadow: 0.5rem 0.3rem 0 var(--tertAccent),
+                        1rem 0.5rem 0 var(--secAccent);
                     font-size: 15rem;
                     line-height: 11rem;
                     letter-spacing: -0.25rem;
-                    font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+                    font-family: antique-olive, -apple-system, BlinkMacSystemFont,
+                        Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+                        Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
                     text-transform: lowercase;
                 }
             }
 
             .introSubTitle {
-                font-family: Matter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+                font-family: Matter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+                    Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
+                    Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
                 text-transform: uppercase;
                 letter-spacing: 0.26rem;
                 color: var(--tpPri);
@@ -93,9 +96,19 @@ header {
         display: flex;
         justify-content: center;
 
+        .aboutTitle {
+            font-family: Matter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+            font-size: large;
+            font-weight: 650;
+            text-transform: uppercase;
+            letter-spacing: .2em;
+            color: #a374ff;
+            text-indent: .5rem;
+        }
+
         .aboutInfo {
             max-width: 55%;
-            border-radius: .5rem;
+            border-radius: 0.5rem;
             padding-block: 2rem;
 
             display: flex;
@@ -105,7 +118,8 @@ header {
             height: 100%;
 
             div {
-                transition: transform 1s cubic-bezier(0.1, 0.5, 0.44, 1.25), opacity 300ms ease;
+                transition: transform 1s cubic-bezier(0.19, 0.8, 0.22, 1.05),
+                    opacity 300ms ease;
 
                 &.invisible {
                     transform: translateX(-70%);
@@ -114,45 +128,62 @@ header {
 
                 h1 {
                     color: var(--secAccent);
-                    text-shadow: .15rem .15rem 0 var(--accent);
+                    text-shadow: 0.15rem 0.15rem 0 var(--accent);
                     font-size: 4.5rem;
                     line-height: 4rem;
                     letter-spacing: -0.25rem;
-                    font-family: antique-olive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+                    font-family: antique-olive, -apple-system, BlinkMacSystemFont,
+                        Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+                        Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
                     text-transform: lowercase;
                 }
 
                 p {
-                    font-family: Matter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-                    letter-spacing: .27rem;
+                    font-family: Matter, -apple-system, BlinkMacSystemFont, Segoe UI,
+                        Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+                        Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+                    letter-spacing: 0.27rem;
                     color: var(--tpPri);
-                    user-select: none;
-                    text-shadow: .05rem .05rem 0 var(--secColor);
-                    font-size: 1.2rem;
+                    text-shadow: 0.05rem 0.05rem 0 var(--secColor);
+                    font-size: 1.3rem;
                     margin-top: 1rem;
                     margin-left: 1rem;
 
                     span {
                         font-weight: 600;
-                        letter-spacing: .2rem;
+                        letter-spacing: 0.2rem;
                         color: var(--accent);
-                        text-shadow: .07rem .07rem 0 var(--secAccent);
+                        text-shadow: 0.07rem 0.07rem 0 var(--secAccent);
                     }
                 }
 
-                &:nth-child(2) {
-                    max-width: 75%;
+                &:nth-child(3) {
+                    max-width: 80%;
 
                     h1 {
                         color: var(--accent);
-                        text-shadow: .15rem .15rem 0 var(--secAccent);
+                        text-shadow: 0.15rem 0.15rem 0 var(--secAccent);
+                    }
+
+                    p {
+                        span {
+                            color: var(--secAccent);
+                            text-shadow: 0.07rem 0.07rem 0 var(--accent);
+                        }
                     }
                 }
 
                 &:last-child {
                     h1 {
                         color: var(--tertAccent);
-                        text-shadow: .15rem .15rem 0 var(--additionalAccent);
+                        text-shadow: 0.15rem 0.15rem 0 var(--additionalAccent);
+                    }
+
+                    p {
+                        span {
+                            color: var(--additionalAccent);
+                            text-shadow: 0.07rem 0.07rem 0 var(--tertAccent);
+                        }
                     }
                 }
             }
@@ -179,13 +210,14 @@ header {
                 }
 
                 div {
-                    transition: transform .7s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 300ms ease;
+                    transition: transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1),
+                        opacity 300ms ease;
                     background-color: var(--tpPri);
                     display: flex;
                     justify-content: center;
                     align-items: center;
 
-                    border-radius: .5rem;
+                    border-radius: 0.5rem;
 
                     section {
                         width: 85%;
@@ -199,7 +231,7 @@ header {
                         svg {
                             height: 4rem;
                             width: 4rem;
-                            transition: transform .7s cubic-bezier(0.3, 0.84, 0.44, 1.4);
+                            transition: transform 0.7s cubic-bezier(0.3, 0.84, 0.44, 1.4);
                         }
                     }
 
@@ -214,18 +246,36 @@ header {
                     }
 
                     &:first-child {
-                        background: radial-gradient(circle at left top, transparent 0%, rgba(0, 0, 0, 0), var(--paleAccent) 85%),
-                            radial-gradient(circle at right bottom, transparent 0%, rgba(0, 0, 0, 0), var(--paleSecAccent) 85%);
+                        background: radial-gradient(circle at left top,
+                                transparent 0%,
+                                rgba(0, 0, 0, 0),
+                                var(--paleAccent) 85%),
+                            radial-gradient(circle at right bottom,
+                                transparent 0%,
+                                rgba(0, 0, 0, 0),
+                                var(--paleSecAccent) 85%);
                     }
 
                     &:nth-child(2) {
-                        background: radial-gradient(circle at left top, transparent 0%, rgba(0, 0, 0, 0), var(--paleTertAccent) 85%),
-                            radial-gradient(circle at right bottom, transparent 0%, rgba(0, 0, 0, 0), var(--paleAccent) 85%);
+                        background: radial-gradient(circle at left top,
+                                transparent 0%,
+                                rgba(0, 0, 0, 0),
+                                var(--paleTertAccent) 85%),
+                            radial-gradient(circle at right bottom,
+                                transparent 0%,
+                                rgba(0, 0, 0, 0),
+                                var(--paleAccent) 85%);
                     }
 
                     &:nth-child(3) {
-                        background: radial-gradient(circle at left top, transparent 0%, rgba(0, 0, 0, 0), var(--additionalPaleAccent) 85%),
-                            radial-gradient(circle at right bottom, transparent 0%, rgba(0, 0, 0, 0), var(--paleTertAccent) 85%);
+                        background: radial-gradient(circle at left top,
+                                transparent 0%,
+                                rgba(0, 0, 0, 0),
+                                var(--additionalPaleAccent) 85%),
+                            radial-gradient(circle at right bottom,
+                                transparent 0%,
+                                rgba(0, 0, 0, 0),
+                                var(--paleTertAccent) 85%);
 
                         svg {
                             width: 5rem;
@@ -234,13 +284,25 @@ header {
                     }
 
                     &:nth-child(4) {
-                        background: radial-gradient(circle at left top, transparent 0%, rgba(0, 0, 0, 0), var(--paleAccent) 85%),
-                            radial-gradient(circle at right bottom, transparent 0%, rgba(0, 0, 0, 0), var(--paleSecAccent) 85%);
+                        background: radial-gradient(circle at left top,
+                                transparent 0%,
+                                rgba(0, 0, 0, 0),
+                                var(--paleAccent) 85%),
+                            radial-gradient(circle at right bottom,
+                                transparent 0%,
+                                rgba(0, 0, 0, 0),
+                                var(--paleSecAccent) 85%);
                     }
 
                     &:nth-child(5) {
-                        background: radial-gradient(circle at left top, transparent 0%, rgba(0, 0, 0, 0), var(--paleTertAccent) 85%),
-                            radial-gradient(circle at right bottom, transparent 0%, rgba(0, 0, 0, 0), var(--paleAccent) 85%);
+                        background: radial-gradient(circle at left top,
+                                transparent 0%,
+                                rgba(0, 0, 0, 0),
+                                var(--paleTertAccent) 85%),
+                            radial-gradient(circle at right bottom,
+                                transparent 0%,
+                                rgba(0, 0, 0, 0),
+                                var(--paleAccent) 85%);
 
                         svg {
                             width: 5rem;
@@ -249,8 +311,14 @@ header {
                     }
 
                     &:nth-child(6) {
-                        background: radial-gradient(circle at left top, transparent 0%, rgba(0, 0, 0, 0), var(--additionalPaleAccent) 85%),
-                            radial-gradient(circle at right bottom, transparent 0%, rgba(0, 0, 0, 0), var(--paleTertAccent) 85%);
+                        background: radial-gradient(circle at left top,
+                                transparent 0%,
+                                rgba(0, 0, 0, 0),
+                                var(--additionalPaleAccent) 85%),
+                            radial-gradient(circle at right bottom,
+                                transparent 0%,
+                                rgba(0, 0, 0, 0),
+                                var(--paleTertAccent) 85%);
 
                         svg {
                             width: 5rem;
@@ -259,18 +327,36 @@ header {
                     }
 
                     &:nth-child(7) {
-                        background: radial-gradient(circle at left top, transparent 0%, rgba(0, 0, 0, 0), var(--paleAccent) 85%),
-                            radial-gradient(circle at right bottom, transparent 0%, rgba(0, 0, 0, 0), var(--paleSecAccent) 85%);
+                        background: radial-gradient(circle at left top,
+                                transparent 0%,
+                                rgba(0, 0, 0, 0),
+                                var(--paleAccent) 85%),
+                            radial-gradient(circle at right bottom,
+                                transparent 0%,
+                                rgba(0, 0, 0, 0),
+                                var(--paleSecAccent) 85%);
                     }
 
                     &:nth-child(8) {
-                        background: radial-gradient(circle at left top, transparent 0%, rgba(0, 0, 0, 0), var(--paleTertAccent) 85%),
-                            radial-gradient(circle at right bottom, transparent 0%, rgba(0, 0, 0, 0), var(--paleAccent) 85%);
+                        background: radial-gradient(circle at left top,
+                                transparent 0%,
+                                rgba(0, 0, 0, 0),
+                                var(--paleTertAccent) 85%),
+                            radial-gradient(circle at right bottom,
+                                transparent 0%,
+                                rgba(0, 0, 0, 0),
+                                var(--paleAccent) 85%);
                     }
 
                     &:last-child {
-                        background: radial-gradient(circle at left top, transparent 0%, rgba(0, 0, 0, 0), var(--additionalPaleAccent) 85%),
-                            radial-gradient(circle at right bottom, transparent 0%, rgba(0, 0, 0, 0), var(--paleTertAccent) 85%);
+                        background: radial-gradient(circle at left top,
+                                transparent 0%,
+                                rgba(0, 0, 0, 0),
+                                var(--additionalPaleAccent) 85%),
+                            radial-gradient(circle at right bottom,
+                                transparent 0%,
+                                rgba(0, 0, 0, 0),
+                                var(--paleTertAccent) 85%);
                     }
                 }
             }
@@ -278,57 +364,53 @@ header {
     }
 }
 
-
 @media (max-width: 1600px) {
     header {
-        .heroMain {
-            .about {
+        .about {
+            .aboutInfo {
+                padding-block: 2rem;
+                gap: 3%;
 
-                .aboutInfo {
-                    padding-block: 2rem;
-                    gap: 3%;
+                div {
+                    h1 {
+                        text-shadow: 0.1rem 0.1rem 0 var(--accent);
+                        font-size: 3.5rem;
+                        line-height: 2.5rem;
+                        letter-spacing: -0.2rem;
+                    }
 
-                    div {
-                        h1 {
-                            text-shadow: .1rem .1rem 0 var(--accent);
-                            font-size: 3.5rem;
-                            line-height: 2.5rem;
-                            letter-spacing: -0.2rem;
-                        }
-
-                        p {
-                            letter-spacing: .23rem;
-                            font-size: 1.1rem;
-                            margin-left: 1rem;
-                        }
+                    p {
+                        letter-spacing: 0.23rem;
+                        font-size: 1.1rem;
+                        margin-left: 1rem;
                     }
                 }
+            }
 
-                .skills {
-                    .skillsGrid {
-                        gap: 1.5rem;
-                        grid-template-columns: repeat(3, 9rem);
-                        grid-template-rows: repeat(3, 9rem);
+            .skills {
+                .skillsGrid {
+                    gap: 1.5rem;
+                    grid-template-columns: repeat(3, 9rem);
+                    grid-template-rows: repeat(3, 9rem);
 
-                        div {
-                            section {
-                                svg {
-                                    width: 3rem;
-                                    height: 3rem;
-                                }
+                    div {
+                        section {
+                            svg {
+                                width: 3rem;
+                                height: 3rem;
                             }
+                        }
 
-                            &:hover {
-                                transform: translate3d(0, 0, 4rem) scale(1.1);
-                            }
+                        &:hover {
+                            transform: translate3d(0, 0, 4rem) scale(1.1);
+                        }
 
-                            &:nth-child(3),
-                            &:nth-child(5),
-                            &:nth-child(6) {
-                                svg {
-                                    width: 4rem;
-                                    height: 4rem;
-                                }
+                        &:nth-child(3),
+                        &:nth-child(5),
+                        &:nth-child(6) {
+                            svg {
+                                width: 4rem;
+                                height: 4rem;
                             }
                         }
                     }
@@ -340,49 +422,47 @@ header {
 
 @media (max-width: 1400px) {
     header {
-        .heroMain {
-            .about {
-                .aboutInfo {
-                    gap: 2%;
+        .about {
+            .aboutInfo {
+                gap: 2%;
 
-                    div {
-                        h1 {
-                            font-size: 3rem;
-                            line-height: 2rem;
-                        }
+                div {
+                    h1 {
+                        font-size: 3rem;
+                        line-height: 2rem;
+                    }
 
-                        p {
-                            font-size: 1rem;
-                            margin-left: .7rem;
-                        }
+                    p {
+                        font-size: 1rem;
+                        margin-left: 0.7rem;
                     }
                 }
+            }
 
-                .skills {
-                    .skillsGrid {
-                        gap: 1rem;
-                        grid-template-columns: repeat(3, 7.5rem);
-                        grid-template-rows: repeat(3, 7.5rem);
+            .skills {
+                .skillsGrid {
+                    gap: 1rem;
+                    grid-template-columns: repeat(3, 7.5rem);
+                    grid-template-rows: repeat(3, 7.5rem);
 
-                        div {
-                            section {
-                                svg {
-                                    width: 2.5rem;
-                                    height: 2.5rem;
-                                }
+                    div {
+                        section {
+                            svg {
+                                width: 2.5rem;
+                                height: 2.5rem;
                             }
+                        }
 
-                            &:hover {
-                                transform: translate3d(0, 0, 3.5rem) scale(1.1);
-                            }
+                        &:hover {
+                            transform: translate3d(0, 0, 3.5rem) scale(1.1);
+                        }
 
-                            &:nth-child(3),
-                            &:nth-child(5),
-                            &:nth-child(6) {
-                                svg {
-                                    width: 3.5rem;
-                                    height: 3.5rem;
-                                }
+                        &:nth-child(3),
+                        &:nth-child(5),
+                        &:nth-child(6) {
+                            svg {
+                                width: 3.5rem;
+                                height: 3.5rem;
                             }
                         }
                     }
@@ -394,100 +474,97 @@ header {
 
 @media (max-width: 1200px) {
     header {
-        .heroMain {
-            .intro {
-                .introLogo {
-                    height: 45%;
+        .intro {
+            .introLogo {
+                height: 45%;
 
-                    &::before {
-                        content: '';
-                        position: absolute;
-                        inset: -5%;
-                        display: block;
-                        box-shadow: 0 0 5vmax var(--accent),
-                            0 0 10vmax var(--accent),
-                            0 0 15vmax var(--paleAccent),
-                            0 0 20vmax var(--paleAccent),
-                            0 0 25vmax var(--paleAccent);
-                        z-index: -3;
-                        border-radius: 50%;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    inset: -5%;
+                    display: block;
+                    box-shadow: 0 0 5vmax var(--accent), 0 0 10vmax var(--accent),
+                        0 0 15vmax var(--paleAccent), 0 0 20vmax var(--paleAccent),
+                        0 0 25vmax var(--paleAccent);
+                    z-index: -3;
+                    border-radius: 50%;
+                }
+            }
+
+            .introName {
+                .introTitle {
+                    h1 {
+                        text-shadow: 0.3rem 0.3rem 0 var(--tertAccent),
+                            0.5rem 0.5rem 0 var(--secAccent);
+                        font-size: 10rem;
+                        line-height: 7.5rem;
+                        letter-spacing: -0.1rem;
                     }
                 }
 
-                .introName {
-                    .introTitle {
-                        h1 {
-                            text-shadow: .3rem 0.3rem 0 var(--tertAccent), .5rem 0.5rem 0 var(--secAccent);
-                            font-size: 10rem;
-                            line-height: 7.5rem;
-                            letter-spacing: -0.1rem;
-                        }
+                .introSubTitle {
+                    letter-spacing: 0.26rem;
+                    text-shadow: 0.1rem 0.1rem 0 var(--secColor);
+                    font-size: medium;
+                    left: -5rem;
+                    top: 5.7rem;
+                }
+            }
+        }
+
+        .about {
+            margin-block: 5rem;
+            height: unset;
+            padding: 0;
+            justify-content: center;
+
+            .aboutInfo {
+                padding: 0;
+                gap: 1.5rem;
+
+                div {
+                    h1 {
+                        font-size: 2.5rem;
+                        line-height: 1.5rem;
+                        letter-spacing: -0.1rem;
                     }
 
-                    .introSubTitle {
-                        letter-spacing: 0.26rem;
-                        text-shadow: 0.1rem 0.1rem 0 var(--secColor);
-                        font-size: medium;
-                        left: -5rem;
-                        top: 5.7rem;
+                    p {
+                        font-size: 0.9rem;
+                        margin-left: 0.6rem;
                     }
                 }
             }
 
-            .about {
-                margin-block: 5rem;
-                height: unset;
-                padding: 0;
-                justify-content: center;
-
-                .aboutInfo {
-                    padding: 0;
-                    gap: 1.5rem;
+            .skills {
+                .skillsGrid {
+                    grid-template-columns: repeat(3, 6.5rem);
+                    grid-template-rows: repeat(3, 6.5rem);
 
                     div {
-                        h1 {
-                            font-size: 2.5rem;
-                            line-height: 1.5rem;
-                            letter-spacing: -0.1rem;
+                        section {
+                            svg {
+                                width: 2rem;
+                                height: 2rem;
+                            }
                         }
 
-                        p {
-                            font-size: 0.9rem;
-                            margin-left: .6rem;
-                        }
-                    }
-                }
+                        &:hover {
+                            transform: translate3d(0, 0, 4rem) scale(1.1);
 
-                .skills {
-                    .skillsGrid {
-                        grid-template-columns: repeat(3, 6.5rem);
-                        grid-template-rows: repeat(3, 6.5rem);
-
-                        div {
                             section {
                                 svg {
-                                    width: 2rem;
-                                    height: 2rem;
+                                    transform: rotate(-45deg);
                                 }
                             }
+                        }
 
-                            &:hover {
-                                transform: translate3d(0, 0, 4rem) scale(1.1);
-
-                                section {
-                                    svg {
-                                        transform: rotate(-45deg);
-                                    }
-                                }
-                            }
-
-                            &:nth-child(3),
-                            &:nth-child(5),
-                            &:nth-child(6) {
-                                svg {
-                                    width: 3rem;
-                                    height: 3rem;
-                                }
+                        &:nth-child(3),
+                        &:nth-child(5),
+                        &:nth-child(6) {
+                            svg {
+                                width: 3rem;
+                                height: 3rem;
                             }
                         }
                     }
@@ -503,6 +580,12 @@ header {
             padding: 0;
             justify-content: center;
             width: 100%;
+
+            .aboutTitle {
+                font-size: small;
+                letter-spacing: .03rem;
+                text-indent: 0.1rem;
+            }
 
             .aboutInfo {
                 max-width: unset;
@@ -520,34 +603,49 @@ header {
                     p {
                         font-size: 0.85rem;
                         letter-spacing: 0rem;
-                        margin-left: .3rem;
+                        margin-left: 0.3rem;
+                        font-weight: 600;
+                        text-shadow: 0.03rem 0.03rem 0 var(--secColor);
+                        color: var(--tpPri);
 
                         span {
                             font-weight: 700;
-                            letter-spacing: .1rem;
+                            letter-spacing: 0.1rem;
                             color: var(--accent);
-                            text-shadow: .03rem .03rem 0 var(--secAccent);
+                            text-shadow: 0.03rem 0.03rem 0 var(--secAccent);
                         }
                     }
 
-                    &:nth-child(2) {
+                    &:nth-child(3) {
                         max-width: unset;
 
                         h1 {
-                            text-shadow: .1rem .1rem 0 var(--secAccent);
+                            text-shadow: 0.1rem 0.1rem 0 var(--secAccent);
+                        }
+
+                        p {
+                            span {
+                                text-shadow: 0.03rem 0.03rem 0 var(--accent);
+                            }
                         }
                     }
 
                     &:last-child {
                         h1 {
-                            text-shadow: .1rem .1rem 0 var(--additionalAccent);
+                            text-shadow: 0.1rem 0.1rem 0 var(--additionalAccent);
+                        }
+
+                        p {
+                            span {
+                                text-shadow: 0.03rem 0.03rem 0 var(--tertAccent);
+                            }
                         }
                     }
                 }
             }
 
             .skills {
-                display: none
+                display: none;
             }
         }
     }
@@ -567,21 +665,18 @@ header {
                 height: 40%;
 
                 &::before {
-                    content: '';
+                    content: "";
                     position: absolute;
                     inset: -5%;
                     display: block;
-                    box-shadow: 0 0 5vmax var(--accent),
-                        0 0 10vmax var(--accent),
-                        0 0 15vmax var(--paleAccent),
-                        0 0 20vmax var(--paleAccent),
+                    box-shadow: 0 0 5vmax var(--accent), 0 0 10vmax var(--accent),
+                        0 0 15vmax var(--paleAccent), 0 0 20vmax var(--paleAccent),
                         0 0 25vmax var(--paleAccent);
                     z-index: -3;
                     border-radius: 50%;
                 }
 
                 svg {
-
                     path {
                         &:nth-child(1) {
                             translate: 0% -0.5%;
@@ -608,7 +703,8 @@ header {
 
                 .introTitle {
                     h1 {
-                        text-shadow: .2rem .2rem 0 var(--tertAccent), .4rem .4rem 0 var(--secAccent);
+                        text-shadow: 0.2rem 0.2rem 0 var(--tertAccent),
+                            0.4rem 0.4rem 0 var(--secAccent);
                         font-size: 7rem;
                         line-height: 5.5rem;
                     }

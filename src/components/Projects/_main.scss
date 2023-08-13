@@ -4,7 +4,17 @@
     padding: 3%;
     margin-inline: auto;
     overflow: hidden;
-    margin-block: 5rem;
+    margin-block: 10rem;
+
+    .projectsTitle {
+        font-family: Matter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+        font-size: larger;
+        font-weight: 650;
+        text-transform: uppercase;
+        letter-spacing: .2rem;
+        color: rgb(0, 174, 255);
+        text-indent: 7rem;
+    }
 
     .angry-grid {
         display: grid;
@@ -178,7 +188,7 @@
                 linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), var(--tpPri)),
                 radial-gradient(circle at top center, transparent 35%, rgba(0, 0, 0, 0), var(--tpPri) 70%);
             box-shadow: var(--paleTertAccent) .1rem .1rem var(--shadowValue) 0, var(--paleTertAccent) .1rem .1rem var(--shadowValue) 0,
-                var(--shadowColorThree) 0 0 .3rem,var(--paleTertAccent) -.0rem -.0rem .3rem 0;
+                var(--shadowColorThree) 0 0 .3rem, var(--paleTertAccent) -.0rem -.0rem .3rem 0;
 
             display: flex;
             flex-direction: column;
@@ -235,7 +245,7 @@
             bottom: 2rem;
             right: 1rem;
 
-            box-shadow: var(--paleSecAccent) -.1rem .05rem var(--shadowValue) 0, var(--shadowColorThree) 0 0 .3rem,var(--paleSecAccent) 0 -0 .3rem 0;
+            box-shadow: var(--paleSecAccent) -.1rem .05rem var(--shadowValue) 0, var(--shadowColorThree) 0 0 .3rem, var(--paleSecAccent) 0 -0 .3rem 0;
 
             overflow: hidden;
             display: flex;
@@ -399,7 +409,7 @@
             background:
                 linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), var(--tpPri)),
                 radial-gradient(circle at top center, transparent 35%, rgba(0, 0, 0, 0), var(--tpPri) 70%);
-            box-shadow: var(--paleAccent) .1rem .05rem var(--shadowValue) 0, var(--shadowColorThree) 0 0 .3rem,var(--paleAccent) 0 0 .3rem 0;
+            box-shadow: var(--paleAccent) .1rem .05rem var(--shadowValue) 0, var(--shadowColorThree) 0 0 .3rem, var(--paleAccent) 0 0 .3rem 0;
 
             h2 {
                 color: var(--accent);
@@ -480,7 +490,7 @@
             left: 1rem;
             margin-right: 2rem;
 
-            box-shadow: var(--paleTertAccent) .1rem .05rem var(--shadowValue) 0, var(--shadowColorThree) 0 0 .3rem,var(--paleTertAccent) 0 0 .3rem 0;
+            box-shadow: var(--paleTertAccent) .1rem .05rem var(--shadowValue) 0, var(--shadowColorThree) 0 0 .3rem, var(--paleTertAccent) 0 0 .3rem 0;
 
             overflow: hidden;
             display: flex;
@@ -555,7 +565,7 @@
                     user-select: none;
                     text-shadow: .1rem .1rem 0 var(--secColor);
                     font-size: small;
-                    margin-right: .5rem;
+                    margin-right: .3rem;
                     transition: 400ms all ease;
                 }
 
@@ -633,7 +643,7 @@
             background:
                 linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), var(--tpPri)),
                 radial-gradient(circle at left top, transparent 35%, rgba(0, 0, 0, 0), var(--tpPri) 70%);
-            box-shadow: var(--paleSecAccent) .1rem -.05rem var(--shadowValue) 0, var(--shadowColorThree) 0 0 .3rem,var(--paleSecAccent) 0 0 .2rem 0;
+            box-shadow: var(--paleSecAccent) .1rem -.05rem var(--shadowValue) 0, var(--shadowColorThree) 0 0 .3rem, var(--paleSecAccent) 0 0 .2rem 0;
 
             overflow: hidden;
 
@@ -791,7 +801,14 @@
 @media (max-width: 1508px) {
     .projectsMain {
         height: 50rem;
-        margin-top: 1rem;
+
+        .projectsTitle {
+            font-size: small;
+            letter-spacing: .03rem;
+            text-indent: 0.1rem;
+            text-indent: .5rem;
+            margin-bottom: 2rem;
+        }
 
         .angry-grid {
             display: flex;
@@ -855,23 +872,24 @@
             }
 
             .item-3 {
-                order: 3;
+                display: none;
+                // order: 3;
 
-                grid-row: unset;
-                grid-column: unset;
-                top: unset;
-                left: unset;
-                right: unset;
-                bottom: unset;
-                margin: 0;
-                padding-bottom: 1rem;
-                flex-direction: column;
+                // grid-row: unset;
+                // grid-column: unset;
+                // top: unset;
+                // left: unset;
+                // right: unset;
+                // bottom: unset;
+                // margin: 0;
+                // padding-bottom: 1rem;
+                // flex-direction: column;
 
-                box-shadow: var(--paleAccent) -.1rem .1rem var(--shadowValue) 0, var(--shadowColorThree) 0 0 .3rem;
+                // box-shadow: var(--paleAccent) -.1rem .1rem var(--shadowValue) 0, var(--shadowColorThree) 0 0 .3rem;
 
-                h2 {
-                    font-size: 2rem;
-                }
+                // h2 {
+                //     font-size: 2rem;
+                // }
             }
 
             .item-4 {
@@ -887,8 +905,9 @@
             }
 
             .item-5 {
-                order: 0;
+                // display: none;
 
+                order: 0;
                 grid-row: unset;
                 grid-column: unset;
                 top: unset;
