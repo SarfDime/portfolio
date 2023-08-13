@@ -654,15 +654,21 @@ header {
 @media (max-width: 800px) {
     header {
         .intro {
-            height: 65vh;
-            height: 65svh;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             background: none !important;
 
+            $firstValue: 70svh;
+            $secondValue: 30rem;
+
+            height: max($firstValue, $secondValue);
+
             .introLogo {
-                height: 40%;
+                $firstLogoValue: 40%;
+                $secondLogoValue: 10rem;
+
+                height: max($firstLogoValue, $secondLogoValue);
 
                 &::before {
                     content: "";

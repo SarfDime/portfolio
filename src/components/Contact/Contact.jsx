@@ -1,12 +1,15 @@
 import React, { useRef } from "react"
+import { useSelector } from "react-redux"
+
 export default function Contact() {
-
     const cardContainerRef = useRef(null)
-
+    const performanceMode = useSelector((state) => state.performance.performanceMode)
     const handleMouseMove = (event) => {
+        if (!performanceMode) {
         const cardContainer = cardContainerRef.current
         cardContainer.style.setProperty("--origin-x", `${event.clientX}px`)
         cardContainer.style.setProperty("--origin-y", `${event.clientY}px`)
+        }
     }
     return (
         <main className="mainComponent contactMain">
@@ -17,9 +20,9 @@ export default function Contact() {
                 <section className="contactInfo">
                     <h1>Let's Connect</h1>
                     <p>
-                        Eager to explore opportunities, share ideas, and create together.
+                        Eager to <span>explore</span> opportunities, share ideas, and create together.
                         Whether you're a fellow coder, a potential collaborator, or simply
-                        someone who appreciates the art of the web, reach out, and let's
+                        someone who appreciates the <span>art</span> of the web, reach out, and let's
                         embark on a journey of innovation and creativity.
                     </p>
                 </section>
@@ -64,5 +67,5 @@ export default function Contact() {
                 </section>
             </div>
         </main>
-    );
+    )
 }

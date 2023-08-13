@@ -80,6 +80,23 @@ body {
                     }
                 }
             }
+
+            .contactMain {
+                .contactContainer {
+                    .cardContainer {
+                        .contactCard {
+                            &::before {
+                                transform: none !important;
+                                display: none;
+                            }
+
+                            &::after {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
