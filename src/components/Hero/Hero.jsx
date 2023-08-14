@@ -20,7 +20,16 @@ export default function Hero() {
             const headerElement = document.querySelector("header")
 
             const shift = (image, index, rangeX, rangeY) => {
-                const translationIntensity = 7.5
+                let translationIntensity = 7.5;
+
+                if (window.innerWidth > 2500) {
+                    translationIntensity = 4;
+                }
+
+                if (window.innerWidth > 3500) {
+                    translationIntensity = 1.5;
+                }
+
                 const maxTranslation = translationIntensity * (index + 1)
                 const currentTranslation = `translate(${maxTranslation * rangeX
                     }px, ${maxTranslation * rangeY}px)`
@@ -47,7 +56,7 @@ export default function Hero() {
             }
 
             const resetLogoShift = () => {
-                shiftAll(paths, 0, 0) 
+                shiftAll(paths, 0, 0)
             }
 
             if (currentElement === "introMain") {

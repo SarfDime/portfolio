@@ -233,6 +233,89 @@ body {
     }
 }
 
+@media screen and (min-width: 2500px) {
+    html {
+        font-size: clamp(1.5625rem, 0.3125rem + 0.8vw, 2.8125rem);
+
+        body {
+            header {
+                .settingsContainer {
+                    div {
+                        &.performanceContainer {
+                            button {
+
+                                p,
+                                h3 {
+                                    font-size: 1rem;
+                                }
+                            }
+                        }
+
+                        &.themeContainer {
+                            .settingsTitle {
+                                font-size: 1.3rem;
+                            }
+
+                            button {
+                                p {
+                                    font-size: 1rem;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                nav {
+                    .nav-button {
+                        font-size: 1.3rem;
+                    }
+                }
+
+                .intro {
+                    .introName {
+                        .introSubTitle {
+                            font-size: 1.2rem;
+                        }
+                    }
+                }
+
+                .about {
+                    .aboutTitle {
+                        font-size: 1rem;
+                        letter-spacing: .2rem;
+                    }
+                }
+            }
+
+            .contactMain {
+                .contactContainer {
+                    .cardContainer {
+                        .contactCard {
+                            &.github {
+                                &::before {
+                                    transform: translateX(calc(var(--origin-x) - 140%)) translateY(calc(var(--origin-y) - 225%));
+                                }
+                            }
+
+                            &.email {
+                                &::before {
+                                    transform: translateX(calc(var(--origin-x) - 275%)) translateY(calc(var(--origin-y) - 210%));
+                                }
+                            }
+
+                            &.linkedin {
+                                &::before {
+                                    transform: translateX(calc(var(--origin-x) - 470%)) translateY(calc(var(--origin-y) - 225%));
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media (max-width: 800px) {
     body {
         &.dark-mode {
