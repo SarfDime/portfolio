@@ -53,7 +53,7 @@ export default function Contact() {
                     <div className="contactCard linkedin">
                     <h1>Let's Get in Touch</h1>
                         <p>message me on</p>
-                        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.linkedin.com/in/dimitar-sarafiloski-148616288/" target="_blank" rel="noopener noreferrer">
                             <span>l</span>
                             <span>i</span>
                             <span>n</span>
